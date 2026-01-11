@@ -157,7 +157,7 @@ export default function CartPage() {
               <div className="mt-6 pt-6 border-t space-y-2 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
                   <span className="text-pink-600">✓</span>
-                  <span>Miễn phí giao hàng nội thành</span>
+                  <span>Miễn phí giao hàng bán kính 5km</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-pink-600">✓</span>

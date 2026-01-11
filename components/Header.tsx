@@ -26,7 +26,7 @@ export default function Header() {
               <span className="hidden md:inline">Giao hoa nhanh trong 90 phút</span>
             </div>
             <div className="flex items-center gap-4">
-              <span className="hidden md:inline">Miễn phí giao hàng nội thành</span>
+              <span className="hidden md:inline">Miễn phí giao hàng bán kính 5km</span>
             </div>
           </div>
         </div>

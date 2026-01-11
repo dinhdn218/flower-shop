@@ -33,11 +33,36 @@ export default function CheckoutPage() {
     e.preventDefault();
     setIsProcessing(true);
 
-    // Simulate order processing
-    setTimeout(() => {
-      clearCart();
-      router.push('/dat-hang-thanh-cong');
-    }, 2000);
+    try {
+      // Gửi đơn hàng đến API
+      const orderData = {
+        ...formData,
+        items: cart,
+        total: getTotalPrice(),
+        name: formData.fullName,
+        note: formData.cardMessage
+      };
+
+      const response = await fetch('/api/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderData),
+      });
+
+      if (response.ok) {
+        clearCart();
+        router.push('/dat-hang-thanh-cong');
+      } else {
+        throw new Error('Failed to save order');
+      }
+    } catch (error) {
+      console.error('Error submitting order:', error);
+      alert('Có lỗi xảy ra khi đặt hàng. Vui lòng thử lại!');
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   if (cart.length === 0) {

@@ -189,7 +189,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   <div className="space-y-3 text-sm">
                     <div className="flex items-start gap-2">
                       <span className="text-pink-600">✓</span>
-                      <span>Miễn phí giao hàng nội thành</span>
+                      <span>Miễn phí giao hàng bán kính 5km</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-pink-600">✓</span>

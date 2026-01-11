@@ -35,7 +35,7 @@ export default function ChatWidgets() {
 
   const openMessenger = () => {
     // Replace with your Facebook Page ID
-    window.open('https://m.me/yourpagename', '_blank');
+    window.open('https://m.me/dinhdn218', '_blank');
   };
 
   return (

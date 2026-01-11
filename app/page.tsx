@@ -12,14 +12,21 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px] bg-gradient-to-r from-pink-100 to-purple-100">
-        <div className="container mx-auto px-4 h-full flex items-center">
+      <section className="relative h-[500px] md:h-[600px] overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1920&q=80"
+          alt="Amor Florist"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40" />
+        <div className="container mx-auto px-4 h-full flex items-center relative z-10">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
-              Amor Florist
-              <span className="block text-pink-600">Tiệm Hoa Của Tình Yêu</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+              Amor Florist - Tiệm Hoa Của Tình Yêu
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">
+            <p className="text-lg md:text-xl text-white mb-8">
               Mang đến những khoảnh khắc ngọt ngào với hoa tươi đẹp - Giao nhanh trong 90 phút
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

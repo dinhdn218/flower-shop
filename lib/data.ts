@@ -314,6 +314,191 @@ export const products: Product[] = [
     ],
     size: 'Cao 40cm',
     inStock: true
+  },
+  {
+    id: '17',
+    name: 'Hồng Pastel',
+    slug: 'hong-pastel',
+    description: 'Bó hoa hồng tone màu pastel nhẹ nhàng, kết hợp với hoa cẩm chướng và các loại hoa phụ. Thích hợp tặng sinh nhật, chúc mừng.',
+    price: 420000,
+    category: 'hoa-sinh-nhat',
+    images: [
+      'https://i.pinimg.com/736x/aa/47/28/aa4728df7c9eaff98fe77be8976cdbb0.jpg',
+      'https://i.pinimg.com/736x/44/19/e9/4419e977e2acff69f5038e4e04bb3a96.jpg'
+    ],
+    size: 'Cao 45cm',
+    inStock: true,
+    isNew: true,
+    bestSeller: true
+  },
+  {
+    id: '18',
+    name: 'Tulip Hồng',
+    slug: 'tulip-hong',
+    description: 'Bó tulip hồng tươi tắn, nhập khẩu từ Hà Lan. Thiết kế đơn giản nhưng sang trọng, thích hợp tặng người yêu.',
+    price: 650000,
+    category: 'hoa-tinh-yeu',
+    images: [
+      'https://i.pinimg.com/736x/0f/dd/f2/0fddf2e85ad49bf17a13c2d7fc9c1e55.jpg',
+      'https://i.pinimg.com/736x/7e/38/21/7e3821eb32f54f4a5db8e2a9c9d94cdf.jpg'
+    ],
+    size: 'Cao 40cm',
+    inStock: true,
+    featured: true,
+    isNew: true
+  },
+  {
+    id: '19',
+    name: 'Hoa Baby Trắng',
+    slug: 'hoa-baby-trang',
+    description: 'Bó hoa baby trắng tinh khôi, đơn giản mà đẹp. Thích hợp cho những ai yêu thích phong cách tối giản.',
+    price: 350000,
+    category: 'hoa-bo',
+    images: [
+      'https://i.pinimg.com/736x/b0/a9/e2/b0a9e27c6e0de4c4c3f1a0c52e6f3fa8.jpg',
+      'https://i.pinimg.com/736x/89/91/8a/89918ac18d0eadd82c528e3c0d08e857.jpg'
+    ],
+    size: 'Cao 35cm',
+    inStock: true,
+    bestSeller: true
+  },
+  {
+    id: '20',
+    name: 'Hướng Dương Vàng',
+    slug: 'huong-duong-vang',
+    description: 'Bó hoa hướng dương tươi sáng, mang đến năng lượng tích cực. Món quà hoàn hảo cho những dịp vui vẻ.',
+    price: 380000,
+    category: 'hoa-sinh-nhat',
+    images: [
+      'https://i.pinimg.com/736x/c4/96/39/c49639f1e60e1f51e2f0ab5f5e8e7c51.jpg',
+      'https://i.pinimg.com/736x/12/53/75/125375d8f0a4e5e8d6c2b74d37f92ef5.jpg'
+    ],
+    size: 'Cao 50cm',
+    inStock: true,
+    featured: true
+  },
+  {
+    id: '21',
+    name: 'Hoa Cẩm Chướng Mix',
+    slug: 'hoa-cam-chuong-mix',
+    description: 'Bó hoa cẩm chướng nhiều màu sắc rực rỡ, tươi tắn và bền lâu. Thích hợp tặng mẹ hoặc thầy cô.',
+    price: 320000,
+    category: 'hoa-chuc-mung',
+    images: [
+      'https://i.pinimg.com/736x/56/0f/bc/560fbccef02e33e72a8f0dc7bdb7fa2a.jpg',
+      'https://i.pinimg.com/736x/8d/47/3e/8d473ed4b5e8c1e5a7d6e4f5b2c3a1e0.jpg'
+    ],
+    size: 'Cao 40cm',
+    inStock: true,
+    isNew: true
+  },
+  {
+    id: '22',
+    name: 'Hồng Đỏ Premium',
+    slug: 'hong-do-premium',
+    description: 'Bó hoa hồng đỏ Ecuador cao cấp, hoa to và bền lâu. Thể hiện tình yêu mãnh liệt và đam mê.',
+    price: 890000,
+    originalPrice: 950000,
+    discount: 6,
+    category: 'hoa-tinh-yeu',
+    images: [
+      'https://i.pinimg.com/736x/ff/3a/8b/ff3a8b7c9e5d4f2a1b8c6d7e9f0a1b2c.jpg',
+      'https://i.pinimg.com/736x/2e/6d/4f/2e6d4f1a3b5c7d8e9f0a1b2c3d4e5f6a.jpg'
+    ],
+    size: 'Cao 50cm',
+    inStock: true,
+    featured: true,
+    bestSeller: true
+  },
+  {
+    id: '23',
+    name: 'Lily Trắng Tinh Khôi',
+    slug: 'lily-trang-tinh-khoi',
+    description: 'Bó hoa lily trắng thuần khiết, hương thơm dễ chịu. Thích hợp tặng cho các dịp trang trọng.',
+    price: 580000,
+    category: 'hoa-cuoi',
+    images: [
+      'https://i.pinimg.com/736x/a1/2b/3c/a12b3c4d5e6f7a8b9c0d1e2f3a4b5c6d.jpg',
+      'https://i.pinimg.com/736x/9f/8e/7d/9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c.jpg'
+    ],
+    size: 'Cao 55cm',
+    inStock: true,
+    isNew: true
+  },
+  {
+    id: '24',
+    name: 'Cẩm Tú Cầu Xanh',
+    slug: 'cam-tu-cau-xanh',
+    description: 'Bó hoa cẩm tú cầu xanh nhẹ nhàng, sang trọng. Thể hiện sự thanh lịch và tinh tế.',
+    price: 720000,
+    category: 'hoa-chuc-mung',
+    images: [
+      'https://i.pinimg.com/736x/3d/4e/5f/3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a.jpg',
+      'https://i.pinimg.com/736x/6c/5d/4e/6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f.jpg'
+    ],
+    size: 'Cao 45cm',
+    inStock: true,
+    featured: true
+  },
+  {
+    id: '25',
+    name: 'Hồng Phấn Ngọt Ngào',
+    slug: 'hong-phan-ngot-ngao',
+    description: 'Bó hoa hồng phấn dịu dàng, kết hợp với hoa phụ và lá xanh. Thích hợp tặng sinh nhật bạn gái.',
+    price: 450000,
+    category: 'hoa-sinh-nhat',
+    images: [
+      'https://i.pinimg.com/736x/7f/6e/5d/7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2c.jpg',
+      'https://i.pinimg.com/736x/1e/2f/3a/1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b.jpg'
+    ],
+    size: 'Cao 42cm',
+    inStock: true,
+    bestSeller: true
+  },
+  {
+    id: '26',
+    name: 'Hoa Kết Cầu Vĩnh Cửu',
+    slug: 'hoa-ket-cau-vinh-cuu',
+    description: 'Hộp hoa hồng đỏ vĩnh cửu sang trọng, có thể giữ mãi. Món quà ý nghĩa cho người thân yêu.',
+    price: 950000,
+    category: 'hoa-tinh-yeu',
+    images: [
+      'https://i.pinimg.com/736x/5c/4d/3e/5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f.jpg',
+      'https://i.pinimg.com/736x/8a/7b/6c/8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d.jpg'
+    ],
+    size: 'Hộp 20x20cm',
+    inStock: true,
+    featured: true
+  },
+  {
+    id: '27',
+    name: 'Bó Hoa Tốt Nghiệp Rực Rỡ',
+    slug: 'bo-hoa-tot-nghiep-ruc-ro',
+    description: 'Bó hoa tốt nghiệp với tông màu vàng cam rực rỡ, thể hiện sự vinh quang và thành công.',
+    price: 420000,
+    category: 'hoa-tot-nghiep',
+    images: [
+      'https://i.pinimg.com/736x/2c/3d/4e/2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f.jpg',
+      'https://i.pinimg.com/736x/9b/8a/7f/9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e.jpg'
+    ],
+    size: 'Cao 48cm',
+    inStock: true,
+    isNew: true
+  },
+  {
+    id: '28',
+    name: 'Hoa Cầm Tay Cô Dâu',
+    slug: 'hoa-cam-tay-co-dau',
+    description: 'Hoa cầm tay cô dâu với hoa hồng trắng và phấn, thiết kế tinh tế và lãng mạn.',
+    price: 850000,
+    category: 'hoa-cuoi',
+    images: [
+      'https://i.pinimg.com/736x/4f/5e/6d/4f5e6d7c8a9b0c1d2e3f4a5b6c7d8e9f.jpg',
+      'https://i.pinimg.com/736x/6d/7e/8f/6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a.jpg'
+    ],
+    size: 'Cao 35cm',
+    inStock: true,
+    featured: true
   }
 ];
 
