@@ -50,14 +50,6 @@ export const categories: Category[] = [
     productCount: 41
   },
   {
-    id: '7',
-    name: 'Chậu Lan Hồ Điệp',
-    slug: 'chau-lan-ho-diep',
-    description: 'Chậu lan cao cấp, sang trọng',
-    image: 'https://i.pinimg.com/1200x/81/b7/83/81b783bf1e9cfe5507f0f46d57832d4f.jpg',
-    productCount: 19
-  },
-  {
     id: '8',
     name: 'Hoa Giáng Sinh',
     slug: 'hoa-giang-sinh',
@@ -163,21 +155,6 @@ export const products: Product[] = [
     size: 'Cao 45cm',
     inStock: true,
     bestSeller: true
-  },
-  {
-    id: '7',
-    name: 'Chậu Lan Hồ Điệp - Sung Túc',
-    slug: 'chau-lan-sung-tuc',
-    description: 'Chậu lan hồ điệp cao cấp với 8 cành hoa trắng tinh khôi. Thiết kế sang trọng, phù hợp tặng khai trương, tân gia hoặc làm quà tặng doanh nghiệp.',
-    price: 12800000,
-    category: 'chau-lan-ho-diep',
-    images: [
-      'https://i.pinimg.com/1200x/ff/f0/48/fff048e1bf1c5d703ef3a692adf93e35.jpg',
-      'https://i.pinimg.com/1200x/ff/f0/48/fff048e1bf1c5d703ef3a692adf93e35.jpg'
-    ],
-    size: 'Cao 120cm',
-    inStock: true,
-    featured: true
   },
   {
     id: '8',

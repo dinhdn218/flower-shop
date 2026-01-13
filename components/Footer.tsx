@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
           {/* About */}
           <div>
             <h3 className="text-white text-lg font-bold mb-4">🌸 Amor Florist</h3>
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
 
           {/* Categories */}
-          <div>
+          {/* <div>
             <h3 className="text-white text-lg font-bold mb-4">Danh Mục</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -91,13 +91,8 @@ export default function Footer() {
                   Hoa Cưới
                 </Link>
               </li>
-              <li>
-                <Link href="/danh-muc/chau-lan-ho-diep" className="hover:text-pink-400 transition">
-                  Chậu Lan Hồ Điệp
-                </Link>
-              </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact */}
           <div>
