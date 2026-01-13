@@ -19,9 +19,9 @@ export default function Header() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center gap-4">
-              <a href="tel:0328717972" className="flex items-center gap-1 hover:underline">
+              <a href="tel:0869867694" className="flex items-center gap-1 hover:underline">
                 <Phone size={14} />
-                <span>032 871 7972</span>
+                <span>086 986 7694</span>
               </a>
               <span className="hidden md:inline">Giao hoa nhanh trong 90 phút</span>
             </div>
@@ -54,9 +54,9 @@ export default function Header() {
                   <Link href="/hoa-sinh-nhat" className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600 transition">
                     🎂 Hoa Sinh Nhật
                   </Link>
-                  <Link href="/hoa-khai-truong" className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600 transition">
+                  {/* <Link href="/hoa-khai-truong" className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600 transition">
                     🎉 Hoa Khai Trương
-                  </Link>
+                  </Link> */}
                   <Link href="/hoa-tinh-yeu" className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600 transition">
                     💖 Hoa Tình Yêu
                   </Link>
@@ -69,9 +69,9 @@ export default function Header() {
                   <Link href="/hoa-chuc-mung" className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600 transition">
                     🎊 Hoa Chúc Mừng
                   </Link>
-                  <Link href="/hoa-chia-buon" className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600 transition">
+                  {/* <Link href="/hoa-chia-buon" className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600 transition">
                     🕊️ Hoa Chia Buồn
-                  </Link>
+                  </Link> */}
                   <Link href="/hoa-bo" className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600 transition">
                     💐 Hoa Bó
                   </Link>

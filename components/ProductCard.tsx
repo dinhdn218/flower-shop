@@ -32,7 +32,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Link href={`/san-pham/${product.slug}`} className="group">
-      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      <div className="bg-white h-full rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
         {/* Image */}
         <div className="relative aspect-square overflow-hidden">
           <Image

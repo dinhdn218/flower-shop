@@ -13,20 +13,25 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section className="relative h-[500px] md:h-[600px] overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1920&q=80"
-          alt="Amor Florist"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-40" />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/banner-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-opacity-40" />
         <div className="container mx-auto px-4 h-full flex items-center relative z-10">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              Amor Florist - Tiệm Hoa Của Tình Yêu
+          <div className="max-w-full">
+            <h1 className="text-4xl md:text-6xl font-bold text-black mb-4">
+              Amor Florist
             </h1>
-            <p className="text-lg md:text-xl text-white mb-8">
+            <h1 className="text-4xl md:text-6xl font-bold text-pink-600 mb-4 w-full">
+              Tiệm Hoa Của Tình Yêu
+            </h1>
+            <p className="text-lg md:text-xl text-black mb-8">
               Mang đến những khoảnh khắc ngọt ngào với hoa tươi đẹp - Giao nhanh trong 90 phút
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -98,31 +103,15 @@ export default function Home() {
             <Link href="/hoa-sinh-nhat" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
               <div className="aspect-square relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=800&q=80"
+                  src="https://i.pinimg.com/1200x/a6/c8/e6/a6c8e6b0a102f2983c9bdc7d94e287bc.jpg"
                   alt="Hoa Sinh Nhật"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-opacity" />
+                <div className="absolute inset-0 bg-black/40 transition-opacity" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
                   <h3 className="text-lg md:text-xl font-bold mb-2 text-center">Hoa Sinh Nhật</h3>
-                  <p className="text-sm text-center">45 sản phẩm</p>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/hoa-khai-truong" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-              <div className="aspect-square relative">
-                <Image
-                  src="https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?w=800&q=80"
-                  alt="Hoa Khai Trương"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-opacity" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
-                  <h3 className="text-lg md:text-xl font-bold mb-2 text-center">Hoa Khai Trương</h3>
-                  <p className="text-sm text-center">32 sản phẩm</p>
+                  <p className="text-sm text-center">6 sản phẩm</p>
                 </div>
               </div>
             </Link>
@@ -130,15 +119,15 @@ export default function Home() {
             <Link href="/hoa-tinh-yeu" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
               <div className="aspect-square relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=800&q=80"
+                  src="https://i.pinimg.com/736x/1d/7c/fc/1d7cfcea25c9bd92ac8bf8082baf5c55.jpg"
                   alt="Hoa Tình Yêu"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-opacity" />
+                <div className="absolute inset-0 bg-black/40 transition-opacity" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
                   <h3 className="text-lg md:text-xl font-bold mb-2 text-center">Hoa Tình Yêu</h3>
-                  <p className="text-sm text-center">67 sản phẩm</p>
+                  <p className="text-sm text-center">7 sản phẩm</p>
                 </div>
               </div>
             </Link>
@@ -146,15 +135,15 @@ export default function Home() {
             <Link href="/hoa-cuoi" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
               <div className="aspect-square relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80"
+                  src="https://i.pinimg.com/736x/b4/b9/1d/b4b91d85860de877b12e67162b324a84.jpg"
                   alt="Hoa Cưới"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-opacity" />
+                <div className="absolute inset-0 bg-black/40 transition-opacity" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
                   <h3 className="text-lg md:text-xl font-bold mb-2 text-center">Hoa Cưới</h3>
-                  <p className="text-sm text-center">28 sản phẩm</p>
+                  <p className="text-sm text-center">4 sản phẩm</p>
                 </div>
               </div>
             </Link>
@@ -162,15 +151,15 @@ export default function Home() {
             <Link href="/hoa-tot-nghiep" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
               <div className="aspect-square relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80"
+                  src="https://i.pinimg.com/736x/dc/a0/a3/dca0a39e332c4fc4087b172d5bf3f096.jpg"
                   alt="Hoa Tốt Nghiệp"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-opacity" />
+                <div className="absolute inset-0 bg-black/40 transition-opacity" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
                   <h3 className="text-lg md:text-xl font-bold mb-2 text-center">Hoa Tốt Nghiệp</h3>
-                  <p className="text-sm text-center">23 sản phẩm</p>
+                  <p className="text-sm text-center">2 sản phẩm</p>
                 </div>
               </div>
             </Link>
@@ -178,31 +167,15 @@ export default function Home() {
             <Link href="/hoa-chuc-mung" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
               <div className="aspect-square relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80"
+                  src="https://i.pinimg.com/736x/50/dc/23/50dc2391a498ab211237eb8e59ad1679.jpg"
                   alt="Hoa Chúc Mừng"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-opacity" />
+                <div className="absolute inset-0 bg-black/40 transition-opacity" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
                   <h3 className="text-lg md:text-xl font-bold mb-2 text-center">Hoa Chúc Mừng</h3>
-                  <p className="text-sm text-center">41 sản phẩm</p>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/hoa-chia-buon" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-              <div className="aspect-square relative">
-                <Image
-                  src="https://images.unsplash.com/photo-1587992989025-c4a1f1a3e2a3?w=800&q=80"
-                  alt="Hoa Chia Buồn"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-opacity" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
-                  <h3 className="text-lg md:text-xl font-bold mb-2 text-center">Hoa Chia Buồn</h3>
-                  <p className="text-sm text-center">19 sản phẩm</p>
+                  <p className="text-sm text-center">4 sản phẩm</p>
                 </div>
               </div>
             </Link>
@@ -210,15 +183,15 @@ export default function Home() {
             <Link href="/hoa-bo" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
               <div className="aspect-square relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1502935467367-715d0f4b8645?w=800&q=80"
+                  src="https://i.pinimg.com/736x/ae/27/42/ae27429867ba2fa156a95b8521f42037.jpg"
                   alt="Hoa Bó"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-opacity" />
+                <div className="absolute inset-0 bg-black/40 transition-opacity" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
                   <h3 className="text-lg md:text-xl font-bold mb-2 text-center">Hoa Bó</h3>
-                  <p className="text-sm text-center">35 sản phẩm</p>
+                  <p className="text-sm text-center">1 sản phẩm</p>
                 </div>
               </div>
             </Link>
@@ -309,10 +282,10 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:0328717972"
+              href="tel:0869867694"
               className="bg-white text-pink-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition"
             >
-              Gọi: 032 871 7972
+              Gọi: 086 986 7694
             </a>
             <Link
               href="/lien-he"

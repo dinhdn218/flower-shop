@@ -105,11 +105,11 @@ export default function OrdersAdminPage() {
             </button>
           </form>
           
-          <div className="mt-6 p-4 bg-blue-50 rounded-lg text-sm text-gray-600">
+          {/* <div className="mt-6 p-4 bg-blue-50 rounded-lg text-sm text-gray-600">
             <p className="font-semibold mb-2">📝 Hướng dẫn:</p>
-            <p>Mật khẩu mặc định: <code className="bg-gray-200 px-2 py-1 rounded">amorflorist2024</code></p>
+            <p>Mật khẩu mặc định: <code className="bg-gray-200 px-2 py-1 rounded">amorflorist2026</code></p>
             <p className="mt-2 text-xs">Bạn có thể thay đổi mật khẩu trong file <code>app/api/orders/route.ts</code></p>
-          </div>
+          </div> */}
         </div>
       </div>
     );

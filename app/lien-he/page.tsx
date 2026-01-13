@@ -44,7 +44,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-1">Điện Thoại</h3>
                     <p className="text-gray-600">
-                      <a href="tel:0328717972" className="hover:text-pink-600">032 871 7972</a>
+                      <a href="tel:0869867694" className="hover:text-pink-600">086 986 7694</a>
                     </p>
                   </div>
                 </div>
@@ -98,9 +98,9 @@ export default function ContactPage() {
                     className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition"
                     title="Threads"
                   >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12.186 3.15c-.43 0-1.178.165-1.948.642-.77.477-1.533 1.23-1.948 2.185-.415.955-.54 2.068-.33 3.15.21 1.082.78 2.04 1.56 2.82.78.78 1.738 1.35 2.82 1.56 1.082.21 2.195.085 3.15-.33.955-.415 1.708-1.178 2.185-1.948.477-.77.642-1.518.642-1.948 0-1.224-.486-2.395-1.351-3.26-.865-.865-2.036-1.351-3.26-1.351h-.52zm0-2c1.657 0 3.244.658 4.419 1.832 1.174 1.175 1.832 2.762 1.832 4.419 0 .66-.225 1.71-.84 2.72-.615 1.01-1.575 2.048-2.835 2.615-1.26.567-2.67.747-4.02.49-1.35-.257-2.58-.96-3.51-1.89-.93-.93-1.633-2.16-1.89-3.51-.257-1.35-.077-2.76.49-4.02.567-1.26 1.605-2.22 2.615-2.835 1.01-.615 2.06-.84 2.72-.84h1.019zm-.186 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-threads" viewBox="0 0 16 16">
+  <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
+</svg>
                   </a>
                   <a
                     href="https://www.tiktok.com/@amor.florist_"
@@ -112,6 +112,15 @@ export default function ContactPage() {
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                     </svg>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61581982089930"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 text-white rounded-full flex items-center justify-center hover:bg-gray-200 transition"
+                    title="Facebook"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5l0-170.3-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 175.9C413.8 494.8 512 386.9 512 256z"/></svg>
                   </a>
                 </div>
               </div>
@@ -198,7 +207,7 @@ export default function ContactPage() {
       {/* Map */}
       <section className="h-96 bg-gray-300">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6348044051906!2d106.68332431533526!3d10.762622192330487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1c06f4e1dd%3A0x43900f1d4539a3f!2sNguy%E1%BB%85n%20V%C4%83n%20C%E1%BB%AB%2C%20Ph%C6%B0%E1%BB%9Dng%204%2C%20Qu%E1%BA%ADn%205%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20Vietnam!5e0!3m2!1sen!2s!4v1635000000000!5m2!1sen!2s"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.62411156704!2d105.8631967759929!3d21.007699580636377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abf840975131%3A0x72d7fbc813899421!2zMTMwIMSQLiBOZ3V54buFbiBLaG_DoWksIFRoYW5oIEzGsMahbmcsIEhhaSBCw6AgVHLGsG5nLCBIw6AgTuG7mWkgMTAwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1768275592440!5m2!1svi!2s"
           width="100%"
           height="100%"
           style={{ border: 0 }}

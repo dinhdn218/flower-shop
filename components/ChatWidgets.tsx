@@ -30,12 +30,12 @@ export default function ChatWidgets() {
   }, []);
 
   const openZalo = () => {
-    window.open('https://zalo.me/0328717972', '_blank');
+    window.open('https://zalo.me/0869867694', '_blank');
   };
 
   const openMessenger = () => {
     // Replace with your Facebook Page ID
-    window.open('https://m.me/dinhdn218', '_blank');
+    window.open('https://m.me/61581982089930', '_blank');
   };
 
   return (
@@ -95,7 +95,7 @@ export default function ChatWidgets() {
 
               {/* Phone */}
               <a
-                href="tel:0328717972"
+                href="tel:0869867694"
                 className="w-full flex items-center gap-3 p-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
               >
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
@@ -105,7 +105,7 @@ export default function ChatWidgets() {
                 </div>
                 <div className="text-left">
                   <div className="font-semibold">Hotline</div>
-                  <div className="text-xs opacity-90">032 871 7972</div>
+                  <div className="text-xs opacity-90">086 986 7694</div>
                 </div>
               </a>
             </div>

@@ -37,11 +37,11 @@ export default function OrderSuccessPage() {
             </Link>
             
             <a
-              href="tel:0328717972"
+              href="tel:0869867694"
               className="flex items-center justify-center gap-2 border-2 border-pink-600 text-pink-600 py-3 rounded-lg font-semibold hover:bg-pink-50 transition"
             >
               <Phone size={20} />
-              Liên Hệ: 032 871 7972
+              Liên Hệ: 086 986 7694
             </a>
           </div>
         </div>

@@ -68,7 +68,7 @@ export async function GET(request: NextRequest) {
   const password = searchParams.get('password');
   
   // Mật khẩu đơn giản để xem đơn hàng (nên thay đổi trong production)
-  if (password !== 'amorflorist2024') {
+  if (password !== 'amorflorist2026') {
     return NextResponse.json(
       { success: false, error: 'Unauthorized' },
       { status: 401 }

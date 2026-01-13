@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useCart } from '@/lib/cart-context';
@@ -65,8 +65,13 @@ export default function CheckoutPage() {
     }
   };
 
+  useEffect(() => {
+    if (cart.length === 0) {
+      router.push('/gio-hang');
+    }
+  }, [cart.length, router]);
+
   if (cart.length === 0) {
-    router.push('/gio-hang');
     return null;
   }
 
