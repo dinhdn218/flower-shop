@@ -20,9 +20,9 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/banner-video.mp4" type="video/mp4" />
+          <source src="/banner-video-2.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-opacity-40" />
+        <div className="absolute inset-0 bg-white/60 bg-opacity-40" />
         <div className="container mx-auto px-4 h-full flex items-center relative z-10">
           <div className="max-w-full">
             <h1 className="text-4xl md:text-6xl font-bold text-black mb-4">
@@ -31,7 +31,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold text-pink-600 mb-4 w-full">
               Tiệm Hoa Của Tình Yêu
             </h1>
-            <p className="text-lg md:text-xl text-black mb-8">
+            <p className="text-lg md:text-xl font-medium text-black mb-8">
               Mang đến những khoảnh khắc ngọt ngào với hoa tươi đẹp - Giao nhanh trong 90 phút
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
