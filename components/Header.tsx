@@ -88,9 +88,9 @@ export default function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-4">
-            <button className="hover:text-pink-600 transition">
+            {/* <button className="hover:text-pink-600 transition">
               <Search size={22} />
-            </button>
+            </button> */}
             <Link href="/yeu-thich" className="relative hover:text-pink-600 transition">
               <Heart size={22} />
               {getWishlistTotal() > 0 && (

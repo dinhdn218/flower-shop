@@ -100,7 +100,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Link href="/hoa-sinh-nhat" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+            {/* <Link href="/hoa-sinh-nhat" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
               <div className="aspect-square relative">
                 <Image
                   src="https://i.pinimg.com/1200x/a6/c8/e6/a6c8e6b0a102f2983c9bdc7d94e287bc.jpg"
@@ -114,7 +114,7 @@ export default function Home() {
                   <p className="text-sm text-center">6 sản phẩm</p>
                 </div>
               </div>
-            </Link>
+            </Link> */}
 
             <Link href="/hoa-tinh-yeu" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
               <div className="aspect-square relative">
@@ -180,7 +180,7 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/hoa-bo" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+            {/* <Link href="/hoa-bo" className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
               <div className="aspect-square relative">
                 <Image
                   src="https://i.pinimg.com/736x/ae/27/42/ae27429867ba2fa156a95b8521f42037.jpg"
@@ -194,7 +194,7 @@ export default function Home() {
                   <p className="text-sm text-center">1 sản phẩm</p>
                 </div>
               </div>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

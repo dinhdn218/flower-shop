@@ -2,14 +2,15 @@
 
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, use } from 'react';
 import { ShoppingCart, Heart, Minus, Plus, Check } from 'lucide-react';
 import { getProductBySlug, products } from '@/lib/data';
 import { useCart } from '@/lib/cart-context';
 import ProductCard from '@/components/ProductCard';
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = getProductBySlug(params.slug);
+export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params);
+  const product = getProductBySlug(slug);
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
