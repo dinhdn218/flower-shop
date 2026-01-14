@@ -3,12 +3,14 @@ import { writeFile, readFile, mkdir } from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
 import { sendOrderNotifications } from '@/lib/notifications';
+import { kv } from '@vercel/kv';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const ORDERS_FILE = path.join(DATA_DIR, 'orders.json');
+const ORDERS_KEY = 'flower-shop:orders';
 
 // Kiểm tra môi trường
-const isVercel = process.env.VERCEL === '1';
+const isVercel = process.env.VERCEL === '1' || process.env.KV_REST_API_URL;
 
 // Đảm bảo thư mục data tồn tại
 async function ensureDataDir() {
@@ -20,11 +22,13 @@ async function ensureDataDir() {
 // Đọc danh sách đơn hàng
 async function getOrders() {
   try {
-    // Trên Vercel, không thể đọc file động
+    // Trên Vercel, sử dụng KV (Redis)
     if (isVercel) {
-      return [];
+      const orders = await kv.get<any[]>(ORDERS_KEY);
+      return orders || [];
     }
     
+    // Local - đọc từ file
     await ensureDataDir();
     if (existsSync(ORDERS_FILE)) {
       const data = await readFile(ORDERS_FILE, 'utf-8');
@@ -46,26 +50,23 @@ async function saveOrder(order: any) {
     status: 'pending'
   };
 
-  // Trên Vercel, chỉ log và gửi notifications
-  if (isVercel) {
-    console.log('=== NEW ORDER ===');
-    console.log(JSON.stringify(newOrder, null, 2));
-    console.log('================');
-    
-    // Gửi notifications qua webhook/telegram/discord
-    await sendOrderNotifications(newOrder);
-    
-    return newOrder;
-  }
-
-  // Local development - lưu vào file
   try {
-    await ensureDataDir();
     const orders = await getOrders();
     orders.unshift(newOrder);
-    await writeFile(ORDERS_FILE, JSON.stringify(orders, null, 2));
     
-    // Vẫn gửi notifications cả trong môi trường local
+    // Trên Vercel, lưu vào KV (Redis)
+    if (isVercel) {
+      await kv.set(ORDERS_KEY, orders);
+      console.log('=== NEW ORDER SAVED TO KV ===');
+      console.log(JSON.stringify(newOrder, null, 2));
+      console.log('============================');
+    } else {
+      // Local - lưu vào file
+      await ensureDataDir();
+      await writeFile(ORDERS_FILE, JSON.stringify(orders, null, 2));
+    }
+    
+    // Gửi notifications
     await sendOrderNotifications(newOrder);
     
     return newOrder;
