@@ -65,7 +65,7 @@ export const products: Product[] = [
     name: 'Thiên Thần',
     slug: 'thien-than',
     description: 'Bó hoa hồng trắng tinh khôi với hoa baby trắng, thể hiện sự trong sáng và thuần khiết. Thích hợp tặng sinh nhật, chúc mừng, hoặc tặng người bạn yêu thương.',
-    price: 410000,
+    price: 350000,
     category: 'hoa-sinh-nhat',
     images: [
       'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=800&q=80',
@@ -81,8 +81,8 @@ export const products: Product[] = [
     name: 'Đam Mê',
     slug: 'dam-me',
     description: 'Bó hoa hồng đỏ rực rỡ với lá mạ vàng, thể hiện tình yêu nồng cháy và đam mê mãnh liệt. Món quà hoàn hảo cho ngày Valentine hoặc kỷ niệm.',
-    price: 490000,
-    originalPrice: 530000,
+    price: 420000,
+    originalPrice: 450000,
     discount: 8,
     category: 'hoa-tinh-yeu',
     images: [
@@ -98,7 +98,7 @@ export const products: Product[] = [
     name: 'Pink Moon',
     slug: 'pink-moon',
     description: 'Bó hoa hồng Ecuador cao cấp với tone màu hồng pastel nhẹ nhàng, kết hợp với các loại hoa phụ tạo nên vẻ đẹp sang trọng và lãng mạn.',
-    price: 1200000,
+    price: 750000,
     category: 'hoa-sinh-nhat',
     images: [
       'https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=800&q=80',
@@ -113,8 +113,8 @@ export const products: Product[] = [
     name: 'Vintage Love',
     slug: 'vintage-love',
     description: 'Bó hoa phong cách vintage với sắc màu pastel nhẹ nhàng, kết hợp hoa hồng, cẩm chướng và hoa phụ. Phù hợp với phong cách cổ điển, lãng mạn.',
-    price: 460000,
-    originalPrice: 520000,
+    price: 380000,
+    originalPrice: 430000,
     discount: 12,
     category: 'hoa-tinh-yeu',
     images: [
@@ -130,7 +130,7 @@ export const products: Product[] = [
     name: 'Kệ Hoa Khai Trương Nhiệt Huyết',
     slug: 'ke-hoa-nhiet-huyet',
     description: 'Kệ hoa chúc mừng khai trương với sắc đỏ rực rỡ, thể hiện sự thịnh vượng và may mắn. Thiết kế sang trọng với hoa đồng tiền, hồng và các loại hoa cao cấp.',
-    price: 920000,
+    price: 650000,
     category: 'hoa-khai-truong',
     images: [
       'https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?w=800&q=80',
@@ -144,8 +144,8 @@ export const products: Product[] = [
     name: 'Ngày Tươi Đẹp',
     slug: 'ngay-tuoi-dep',
     description: 'Bó hoa với sắc màu tươi sáng, kết hợp hoa hướng dương, cúc mẫu đơn và các loại hoa mùa xuân. Mang đến năng lượng tích cực và niềm vui.',
-    price: 550000,
-    originalPrice: 630000,
+    price: 450000,
+    originalPrice: 520000,
     discount: 13,
     category: 'hoa-chuc-mung',
     images: [
@@ -161,8 +161,8 @@ export const products: Product[] = [
     name: 'Summer Vibe',
     slug: 'summer-vibe',
     description: 'Bó hoa với tone màu vàng cam tươi sáng, kết hợp hoa hướng dương, hồng và các loại hoa mùa hè. Mang đến không khí rộn ràng, náo nhiệt.',
-    price: 490000,
-    originalPrice: 520000,
+    price: 420000,
+    originalPrice: 450000,
     discount: 6,
     category: 'hoa-sinh-nhat',
     images: [
@@ -178,7 +178,7 @@ export const products: Product[] = [
     name: 'Fairy Tale',
     slug: 'fairy-tale',
     description: 'Bó hoa phong cách cổ tích với sắc tím lavender, hồng pastel và trắng. Thiết kế nhẹ nhàng, mơ màng như trong truyện cổ tích.',
-    price: 680000,
+    price: 520000,
     category: 'hoa-cuoi',
     images: [
       'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80',
@@ -193,8 +193,8 @@ export const products: Product[] = [
     name: 'Thấu Cảm',
     slug: 'thau-cam',
     description: 'Bó hoa với tone màu nhẹ nhàng, thể hiện sự đồng cảm và chia sẻ. Phù hợp để động viên, thăm hỏi hoặc bày tỏ sự quan tâm.',
-    price: 490000,
-    originalPrice: 550000,
+    price: 420000,
+    originalPrice: 470000,
     discount: 11,
     category: 'hoa-chuc-mung',
     images: [
@@ -210,7 +210,7 @@ export const products: Product[] = [
     name: 'Hoa Cầm Tay Cô Dâu - Romance',
     slug: 'hoa-co-dau-romance',
     description: 'Hoa cầm tay cô dâu phong cách cổ điển với hoa hồng trắng và hồng pastel. Thiết kế tinh tế, thanh lịch cho ngày trọng đại.',
-    price: 850000,
+    price: 650000,
     category: 'hoa-cuoi',
     images: [
       'https://i.pinimg.com/736x/b1/51/46/b15146346d850da5cb21594be8b4bc20.jpg',
@@ -224,7 +224,7 @@ export const products: Product[] = [
     name: 'Chúc Mừng Tốt Nghiệp',
     slug: 'chuc-mung-tot-nghiep',
     description: 'Bó hoa tươi sáng với hoa hướng dương và hoa hồng vàng, thể hiện sự thành công và tương lai rạng rỡ. Phù hợp tặng lễ tốt nghiệp.',
-    price: 380000,
+    price: 320000,
     category: 'hoa-tot-nghiep',
     images: [
       'https://i.pinimg.com/736x/ce/95/36/ce95361c779054d597c0982b38b36186.jpg',
@@ -238,7 +238,7 @@ export const products: Product[] = [
     name: 'Feliz Navidad',
     slug: 'feliz-navidad',
     description: 'Bó hoa Giáng Sinh với sắc đỏ truyền thống, kết hợp hoa hồng đỏ, quả tùng và các phụ kiện Noel. Mang không khí ấm áp của mùa lễ hội.',
-    price: 580000,
+    price: 480000,
     category: 'hoa-giang-sinh',
     images: [
       'https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=800&q=80',
@@ -252,7 +252,7 @@ export const products: Product[] = [
     name: 'Elegant',
     slug: 'elegant',
     description: 'Bó hoa cao cấp với 99 bông hồng Ecuador, thể hiện sự sang trọng và đẳng cấp. Món quà hoàn hảo cho những dịp đặc biệt quan trọng.',
-    price: 2940000,
+    price: 900000,
     category: 'hoa-tinh-yeu',
     images: [
       'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=800&q=80',
@@ -267,7 +267,7 @@ export const products: Product[] = [
     name: 'Kệ Hoa Khai Trương - Phồn Vinh',
     slug: 'ke-hoa-phon-vinh',
     description: 'Kệ hoa khai trương cao cấp với thiết kế hoành tráng, kết hợp nhiều loại hoa cao cấp. Thể hiện sự thịnh vượng và phát đạt trong kinh doanh.',
-    price: 2370000,
+    price: 850000,
     category: 'hoa-khai-truong',
     images: [
       'https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?w=800&q=80',
@@ -281,8 +281,8 @@ export const products: Product[] = [
     name: 'Only Love',
     slug: 'only-love',
     description: 'Bó hoa hồng đỏ kết hợp với baby và lá bạc, thiết kế đơn giản nhưng tinh tế. Thể hiện tình yêu chân thành và thuần khiết.',
-    price: 390000,
-    originalPrice: 410000,
+    price: 330000,
+    originalPrice: 350000,
     discount: 5,
     category: 'hoa-tinh-yeu',
     images: [
@@ -297,7 +297,7 @@ export const products: Product[] = [
     name: 'Hồng Pastel',
     slug: 'hong-pastel',
     description: 'Bó hoa hồng tone màu pastel nhẹ nhàng, kết hợp với hoa cẩm chướng và các loại hoa phụ. Thích hợp tặng sinh nhật, chúc mừng.',
-    price: 420000,
+    price: 360000,
     category: 'hoa-sinh-nhat',
     images: [
       'https://i.pinimg.com/736x/29/80/3c/29803ccbbc52584cef28600199d0ed8a.jpg',
@@ -313,7 +313,7 @@ export const products: Product[] = [
     name: 'Tulip Hồng',
     slug: 'tulip-hong',
     description: 'Bó tulip hồng tươi tắn, nhập khẩu từ Hà Lan. Thiết kế đơn giản nhưng sang trọng, thích hợp tặng người yêu.',
-    price: 650000,
+    price: 500000,
     category: 'hoa-tinh-yeu',
     images: [
       'https://i.pinimg.com/736x/d1/65/fc/d165fc41daefae7798035f1484cb7a00.jpg',
@@ -329,7 +329,7 @@ export const products: Product[] = [
     name: 'Hoa Baby Trắng',
     slug: 'hoa-baby-trang',
     description: 'Bó hoa baby trắng tinh khôi, đơn giản mà đẹp. Thích hợp cho những ai yêu thích phong cách tối giản.',
-    price: 350000,
+    price: 280000,
     category: 'hoa-bo',
     images: [
       'https://i.pinimg.com/736x/b6/66/fd/b666fd07c17471d2f18ee52684791701.jpg',
@@ -344,7 +344,7 @@ export const products: Product[] = [
     name: 'Hướng Dương Vàng',
     slug: 'huong-duong-vang',
     description: 'Bó hoa hướng dương tươi sáng, mang đến năng lượng tích cực. Món quà hoàn hảo cho những dịp vui vẻ.',
-    price: 380000,
+    price: 320000,
     category: 'hoa-sinh-nhat',
     images: [
       'https://i.pinimg.com/1200x/4e/ae/c4/4eaec4d94fda048f2a4a8c03cd713ef8.jpg',
@@ -359,7 +359,7 @@ export const products: Product[] = [
     name: 'Hoa Cẩm Chướng Mix',
     slug: 'hoa-cam-chuong-mix',
     description: 'Bó hoa cẩm chướng nhiều màu sắc rực rỡ, tươi tắn và bền lâu. Thích hợp tặng mẹ hoặc thầy cô.',
-    price: 320000,
+    price: 250000,
     category: 'hoa-chuc-mung',
     images: [
       'https://i.pinimg.com/1200x/a6/c8/e6/a6c8e6b0a102f2983c9bdc7d94e287bc.jpg',
@@ -374,8 +374,8 @@ export const products: Product[] = [
     name: 'Hồng Đỏ Premium',
     slug: 'hong-do-premium',
     description: 'Bó hoa hồng đỏ Ecuador cao cấp, hoa to và bền lâu. Thể hiện tình yêu mãnh liệt và đam mê.',
-    price: 890000,
-    originalPrice: 950000,
+    price: 680000,
+    originalPrice: 750000,
     discount: 6,
     category: 'hoa-tinh-yeu',
     images: [
@@ -392,7 +392,7 @@ export const products: Product[] = [
     name: 'Lily Trắng Tinh Khôi',
     slug: 'lily-trang-tinh-khoi',
     description: 'Bó hoa lily trắng thuần khiết, hương thơm dễ chịu. Thích hợp tặng cho các dịp trang trọng.',
-    price: 580000,
+    price: 480000,
     category: 'hoa-cuoi',
     images: [
       'https://i.pinimg.com/736x/be/ea/f8/beeaf82c4b3a16a18059d92dd04459f7.jpg',
@@ -407,7 +407,7 @@ export const products: Product[] = [
     name: 'Cẩm Tú Cầu Xanh',
     slug: 'cam-tu-cau-xanh',
     description: 'Bó hoa cẩm tú cầu xanh nhẹ nhàng, sang trọng. Thể hiện sự thanh lịch và tinh tế.',
-    price: 720000,
+    price: 550000,
     category: 'hoa-chuc-mung',
     images: [
       'https://i.pinimg.com/736x/e3/e3/3b/e3e33bbf390292b154fcf3259ddd5ddc.jpg',
@@ -422,7 +422,7 @@ export const products: Product[] = [
     name: 'Hồng Phấn Ngọt Ngào',
     slug: 'hong-phan-ngot-ngao',
     description: 'Bó hoa hồng phấn dịu dàng, kết hợp với hoa phụ và lá xanh. Thích hợp tặng sinh nhật bạn gái.',
-    price: 450000,
+    price: 380000,
     category: 'hoa-sinh-nhat',
     images: [
       'https://i.pinimg.com/736x/f8/a3/26/f8a326cdb26b1ae57a822a1701731626.jpg',
@@ -437,7 +437,7 @@ export const products: Product[] = [
     name: 'Hoa Kết Cầu Vĩnh Cửu',
     slug: 'hoa-ket-cau-vinh-cuu',
     description: 'Hộp hoa hồng đỏ vĩnh cửu sang trọng, có thể giữ mãi. Món quà ý nghĩa cho người thân yêu.',
-    price: 950000,
+    price: 720000,
     category: 'hoa-tinh-yeu',
     images: [
       'https://i.pinimg.com/736x/65/94/33/659433baa434e5360ec3728f39333204.jpg',
@@ -452,7 +452,7 @@ export const products: Product[] = [
     name: 'Bó Hoa Tốt Nghiệp Rực Rỡ',
     slug: 'bo-hoa-tot-nghiep-ruc-ro',
     description: 'Bó hoa tốt nghiệp với tông màu vàng cam rực rỡ, thể hiện sự vinh quang và thành công.',
-    price: 420000,
+    price: 360000,
     category: 'hoa-tot-nghiep',
     images: [
       'https://i.pinimg.com/736x/d2/58/33/d25833bcafe44359a726151d6322f578.jpg',
@@ -467,7 +467,7 @@ export const products: Product[] = [
     name: 'Hoa Cầm Tay Cô Dâu',
     slug: 'hoa-cam-tay-co-dau',
     description: 'Hoa cầm tay cô dâu với hoa hồng trắng và phấn, thiết kế tinh tế và lãng mạn.',
-    price: 850000,
+    price: 650000,
     category: 'hoa-cuoi',
     images: [
       'https://i.pinimg.com/1200x/3a/18/88/3a18884f0d3973d6b207369c7b66b15a.jpg',
