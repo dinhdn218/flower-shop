@@ -1,125 +1,95 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Heart, Sprout, Flower2 } from "lucide-react";
+import PageIntro from "@/components/PageIntro";
+export const metadata = { title: "Về Amor — Amor Florist" };
 export default function AboutPage() {
   return (
-    <div className="bg-gray-50">
-      {/* Hero */}
-      <section className="bg-gradient-to-r from-pink-500 to-purple-600 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Về Amor Florist</h1>
-          <p className="text-lg opacity-90">
-            Tiệm hoa của tình yêu - Nơi lưu giữ những khoảnh khắc ngọt ngào
-          </p>
+    <div className="editorial-page">
+      <PageIntro
+        title="Một tiệm hoa, nhiều lời thương."
+        description="Amor là tình yêu. Và chúng mình chọn kể câu chuyện ấy bằng những cánh hoa."
+        eyebrow="CÂU CHUYỆN NHỎ CỦA AMOR"
+      />
+      <section className="about-story">
+        <div className="about-photo">
+          <Image
+            src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=1000&q=85"
+            alt="Những cánh hoa được chọn lựa và gói ghém tại Amor"
+            fill
+            sizes="(max-width:760px) 88vw, 45vw"
+            className="object-cover"
+          />
         </div>
-      </section>
-
-      {/* Story */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-              Câu Chuyện Của Chúng Tôi
-            </h2>
-            <div className="prose prose-lg mx-auto text-gray-600">
-              <p className="mb-4">
-                Amor Florist ra đời từ tình yêu và niềm đam mê với những bông hoa tươi đẹp. 
-                Chúng tôi tin rằng mỗi bó hoa không chỉ là món quà vật chất, mà còn là cầu nối 
-                của tình cảm, là cách để bạn bày tỏ tình yêu thương và sự quan tâm đến những người thân yêu.
-              </p>
-              <p className="mb-4">
-                Với đội ngũ florist tài năng và tâm huyết, chúng tôi luôn chọn lọc những bông hoa 
-                tươi nhất, đẹp nhất từ các vườn hoa uy tín. Mỗi bó hoa đều được thiết kế tỉ mỉ, 
-                chăm chút từng chi tiết nhỏ để mang đến sản phẩm hoàn hảo nhất cho bạn.
-              </p>
-              <p>
-                "Amor" trong tiếng Tây Ban Nha có nghĩa là "tình yêu". Đó chính là giá trị cốt lõi 
-                mà chúng tôi muốn truyền tải qua từng bó hoa - Tình yêu thương, sự chân thành và 
-                những khoảnh khắc đáng nhớ.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center">
-            Giá Trị Cốt Lõi
+        <div className="about-copy">
+          <span className="eyebrow">BẮT ĐẦU TỪ MỘT TÌNH YÊU</span>
+          <h2>
+            Hoa không chỉ để ngắm.
+            <br />
+            Hoa còn để nói thương.
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">💐</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Tình Yêu</h3>
-              <p className="text-gray-600">
-                Mỗi bó hoa được làm ra với tình yêu, chăm chút từng chi tiết nhỏ nhất
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">✨</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Chất Lượng</h3>
-              <p className="text-gray-600">
-                Cam kết hoa tươi 100%, được chọn lọc kỹ càng từ những vườn hoa uy tín
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">❤️</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Tận Tâm</h3>
-              <p className="text-gray-600">
-                Phục vụ với trái tim, luôn lắng nghe và thấu hiểu khách hàng
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-16 bg-pink-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">1+</div>
-              <div className="opacity-90">Năm Kinh Nghiệm</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">50+</div>
-              <div className="opacity-90">Khách Hàng</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">30+</div>
-              <div className="opacity-90">Mẫu Hoa</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">98%</div>
-              <div className="opacity-90">Hài Lòng</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Sẵn Sàng Đặt Hoa?
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Hãy để chúng tôi giúp bạn gửi trao những thông điệp yêu thương
+          <p>
+            Amor Florist ra đời từ tình yêu dành cho những bông hoa và những
+            khoảnh khắc đời thường. Chúng mình tin rằng một bó hoa có thể làm
+            ngày của ai đó dịu lại, khiến một lời chúc trở nên gần gũi, hay giúp
+            bạn nói điều vẫn giữ trong lòng.
           </p>
-          <Link
-            href="/"
-            className="inline-block bg-pink-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-pink-700 transition"
-          >
-            Đặt Hoa Ngay
+          <p>
+            “Amor” trong tiếng Tây Ban Nha có nghĩa là “tình yêu”. Đó cũng là
+            điều chúng mình gửi vào mỗi thiết kế: sự chân thành, một chút tinh
+            tế và thật nhiều chăm chút.
+          </p>
+          <p>
+            Từ chọn hoa, phối sắc đến gói từng nếp giấy, Amor muốn món quà khi
+            đến tay người nhận sẽ mang trọn cảm xúc của bạn.
+          </p>
+          <Link href="/noi-bat" className="text-link">
+            Ngắm những thiết kế của Amor <ArrowRight size={16} />
           </Link>
         </div>
+      </section>
+      <section className="about-values">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">NHỮNG ĐIỀU AMOR GÌN GIỮ</span>
+            <h2>Chăm chút từ những điều nhỏ nhất.</h2>
+          </div>
+        </div>
+        <div className="values-grid">
+          {[
+            {
+              icon: Heart,
+              title: "Từ trái tim",
+              text: "Lắng nghe câu chuyện của bạn, để mỗi bó hoa mang một ý nghĩa thật riêng.",
+            },
+            {
+              icon: Sprout,
+              title: "Tươi mới mỗi ngày",
+              text: "Chọn lựa từng cành hoa, phối hợp sắc màu và nâng niu đến tận khi trao tay.",
+            },
+            {
+              icon: Flower2,
+              title: "Chỉn chu từng chút",
+              text: "Tỉ mỉ từ cánh hoa đến tấm thiệp, để lời thương của bạn được gửi đi trọn vẹn.",
+            },
+          ].map(({ icon: Icon, title, text }) => (
+            <article key={title}>
+              <Icon size={34} strokeWidth={1} />
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="consultation">
+        <div>
+          <span className="eyebrow">MỜI BẠN GHÉ AMOR</span>
+          <h2>Một câu chuyện mới, bắt đầu từ bạn.</h2>
+          <p>Kể chúng mình nghe về người bạn thương nhé.</p>
+        </div>
+        <Link href="/lien-he" className="botanical-button">
+          Trò chuyện với Amor <ArrowRight size={17} />
+        </Link>
       </section>
     </div>
   );

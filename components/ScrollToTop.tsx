@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { ArrowUp } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { ArrowUp } from "lucide-react";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,17 +15,19 @@ export default function ScrollToTop() {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
 
     return () => {
-      window.removeEventListener('scroll', toggleVisibility);
+      window.removeEventListener("scroll", toggleVisibility);
     };
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
     });
   };
 
@@ -34,8 +36,8 @@ export default function ScrollToTop() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-20 md:bottom-24 right-6 z-40 bg-pink-600 text-white w-10 h-10 md:w-14 md:h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-pink-700 transition-all hover:scale-110"
-          aria-label="Scroll to top"
+          className="scroll-top-button"
+          aria-label="Lên đầu trang"
         >
           <ArrowUp size={24} />
         </button>

@@ -1,8 +1,17 @@
-'use client';
-
-import { useState, useEffect } from 'react';
-import { Search, Package, Clock, CheckCircle, XCircle } from 'lucide-react';
-
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import {
+  Search,
+  Package,
+  Clock,
+  CheckCircle,
+  XCircle,
+  ArrowLeft,
+  RefreshCw,
+  LogOut,
+  LockKeyhole,
+} from "lucide-react";
 interface Order {
   id: string;
   createdAt: string;
@@ -10,197 +19,270 @@ interface Order {
   name: string;
   phone: string;
   address: string;
-  items: any[];
+  items: { product?: { name?: string }; quantity: number }[];
   total: number;
   paymentMethod: string;
   note?: string;
 }
-
+const statuses = [
+  { value: "all", label: "Tất cả" },
+  { value: "pending", label: "Chờ xử lý" },
+  { value: "completed", label: "Hoàn thành" },
+  { value: "cancelled", label: "Đã hủy" },
+];
 export default function OrdersAdminPage() {
-  const [password, setPassword] = useState('');
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
+  const [authenticated, setAuthenticated] = useState(false);
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const [search, setSearch] = useState("");
+  const [status, setStatus] = useState("all");
+  const [error, setError] = useState("");
+  const loadOrders = async () => {
     setLoading(true);
-    
+    setError("");
     try {
-      const response = await fetch(`/api/orders?password=${password}`);
+      const response = await fetch(
+        `/api/orders?password=${encodeURIComponent(password)}`,
+      );
       const data = await response.json();
-      
-      if (data.success) {
-        setIsAuthenticated(true);
-        setOrders(data.orders);
-      } else {
-        alert('Mật khẩu không đúng!');
+      if (!response.ok || !data.success) {
+        setError(
+          response.status === 401
+            ? "Mật khẩu chưa đúng. Bạn kiểm tra lại nhé."
+            : "Không thể tải đơn hàng. Vui lòng thử lại.",
+        );
+        return;
       }
-    } catch (error) {
-      alert('Có lỗi xảy ra!');
+      setOrders(data.orders);
+      setAuthenticated(true);
+    } catch {
+      setError("Không thể kết nối. Vui lòng thử lại.");
     } finally {
       setLoading(false);
     }
   };
-
-  const filteredOrders = orders.filter(order => 
-    order.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    order.phone.includes(searchTerm) ||
-    order.id.includes(searchTerm)
+  const filtered = orders.filter(
+    (order) =>
+      (status === "all" || order.status === status) &&
+      `${order.name} ${order.phone} ${order.id}`
+        .toLocaleLowerCase("vi")
+        .includes(search.toLocaleLowerCase("vi")),
   );
-
-  const getStatusBadge = (status: string) => {
-    switch (status) {
-      case 'pending':
-        return <span className="flex items-center gap-1 text-yellow-600 bg-yellow-100 px-3 py-1 rounded-full text-sm">
-          <Clock size={14} /> Chờ xử lý
-        </span>;
-      case 'completed':
-        return <span className="flex items-center gap-1 text-green-600 bg-green-100 px-3 py-1 rounded-full text-sm">
-          <CheckCircle size={14} /> Hoàn thành
-        </span>;
-      case 'cancelled':
-        return <span className="flex items-center gap-1 text-red-600 bg-red-100 px-3 py-1 rounded-full text-sm">
-          <XCircle size={14} /> Đã hủy
-        </span>;
-      default:
-        return <span className="text-gray-600 bg-gray-100 px-3 py-1 rounded-full text-sm">
-          {status}
-        </span>;
-    }
-  };
-
-  if (!isAuthenticated) {
+  const badge = (value: string) => {
+    const Icon =
+      value === "completed"
+        ? CheckCircle
+        : value === "cancelled"
+          ? XCircle
+          : Clock;
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
-        <div className="bg-white rounded-lg shadow-md p-8 max-w-md w-full">
-          <div className="text-center mb-6">
-            <Package size={48} className="text-pink-600 mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-gray-800">Quản Lý Đơn Hàng</h1>
-            <p className="text-gray-600 mt-2">Nhập mật khẩu để xem đơn hàng</p>
-          </div>
-          
-          <form onSubmit={handleLogin}>
-            <div className="mb-4">
-              <label className="block text-gray-700 font-medium mb-2">
-                Mật khẩu
-              </label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500"
-                placeholder="Nhập mật khẩu"
-                required
-              />
-            </div>
-            
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-pink-600 text-white py-3 rounded-lg font-semibold hover:bg-pink-700 transition disabled:opacity-50"
-            >
-              {loading ? 'Đang xác thực...' : 'Đăng nhập'}
-            </button>
-          </form>
-          
-          {/* <div className="mt-6 p-4 bg-blue-50 rounded-lg text-sm text-gray-600">
-            <p className="font-semibold mb-2">📝 Hướng dẫn:</p>
-            <p>Mật khẩu mặc định: <code className="bg-gray-200 px-2 py-1 rounded">amorflorist2026</code></p>
-            <p className="mt-2 text-xs">Bạn có thể thay đổi mật khẩu trong file <code>app/api/orders/route.ts</code></p>
-          </div> */}
+      <span
+        className={`order-status status-${["pending", "completed", "cancelled"].includes(value) ? value : "other"}`}
+      >
+        <Icon size={14} />
+        {statuses.find((s) => s.value === value)?.label || value}
+      </span>
+    );
+  };
+  if (!authenticated)
+    return (
+      <div className="admin-login">
+        <div className="admin-login-intro">
+          <span className="eyebrow">AMOR · KHÔNG GIAN QUẢN TRỊ</span>
+          <h1>Chăm chút từng đơn hoa.</h1>
+          <p>Theo dõi những lời thương đang chờ được gửi trao.</p>
+          <Link href="/" className="text-link">
+            <ArrowLeft size={16} />
+            Về cửa hàng
+          </Link>
         </div>
+        <form
+          className="admin-login-form"
+          onSubmit={(event) => {
+            event.preventDefault();
+            void loadOrders();
+          }}
+        >
+          <LockKeyhole size={32} strokeWidth={1.2} />
+          <h2>Đăng nhập quản trị</h2>
+          <p>Dùng mật khẩu quản trị để xem đơn hàng.</p>
+          <label htmlFor="admin-password">
+            Mật khẩu
+            <input
+              id="admin-password"
+              type="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              required
+              placeholder="Nhập mật khẩu quản trị"
+            />
+          </label>
+          {error && (
+            <p role="alert" className="form-error">
+              {error}
+            </p>
+          )}
+          <button type="submit" className="botanical-button" disabled={loading}>
+            {loading ? "Đang xác thực…" : "Đăng nhập"}
+          </button>
+        </form>
       </div>
     );
-  }
-
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container mx-auto px-4">
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-bold text-gray-800">Danh Sách Đơn Hàng</h1>
-            <button
-              onClick={() => window.location.reload()}
-              className="text-pink-600 hover:text-pink-700 font-medium"
-            >
-              Làm mới
-            </button>
-          </div>
-          
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Tìm kiếm theo tên, số điện thoại hoặc mã đơn..."
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500"
-            />
-          </div>
+    <div className="admin-page">
+      <div className="admin-heading">
+        <div>
+          <span className="eyebrow">AMOR · QUẢN LÝ ĐƠN HÀNG</span>
+          <h1>Những lời thương được gửi đi.</h1>
+          <p>Theo dõi và tra cứu đơn hoa của cửa hàng.</p>
         </div>
-
-        <div className="space-y-4">
-          {filteredOrders.length === 0 ? (
-            <div className="bg-white rounded-lg shadow-md p-12 text-center">
-              <Package size={64} className="text-gray-300 mx-auto mb-4" />
-              <p className="text-gray-500 text-lg">Chưa có đơn hàng nào</p>
-            </div>
-          ) : (
-            filteredOrders.map((order) => (
-              <div key={order.id} className="bg-white rounded-lg shadow-md p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-lg font-semibold text-gray-800">
-                        Đơn hàng #{order.id}
-                      </h3>
-                      {getStatusBadge(order.status)}
-                    </div>
-                    <p className="text-sm text-gray-500">
-                      {new Date(order.createdAt).toLocaleString('vi-VN')}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-pink-600">
-                      {order.total.toLocaleString('vi-VN')}đ
-                    </div>
-                    <div className="text-sm text-gray-500">
-                      {order.paymentMethod === 'cod' ? 'COD' : 'Chuyển khoản'}
-                    </div>
-                  </div>
+        <div className="admin-actions">
+          <button
+            className="outline-button"
+            onClick={() => void loadOrders()}
+            disabled={loading}
+          >
+            <RefreshCw size={16} className={loading ? "animate-spin" : ""} />
+            {loading ? "Đang tải…" : "Làm mới"}
+          </button>
+          <button
+            className="outline-button"
+            onClick={() => {
+              setAuthenticated(false);
+              setPassword("");
+              setOrders([]);
+              setError("");
+            }}
+          >
+            <LogOut size={16} />
+            Đăng xuất
+          </button>
+        </div>
+      </div>
+      <div className="admin-metrics">
+        {[
+          { label: "Tổng đơn hàng", value: orders.length, icon: Package },
+          {
+            label: "Chờ xử lý",
+            value: orders.filter((o) => o.status === "pending").length,
+            icon: Clock,
+          },
+          {
+            label: "Hoàn thành",
+            value: orders.filter((o) => o.status === "completed").length,
+            icon: CheckCircle,
+          },
+        ].map(({ label, value, icon: Icon }) => (
+          <div key={label}>
+            <Icon size={22} strokeWidth={1.2} />
+            <span>
+              {label}
+              <strong>{value}</strong>
+            </span>
+          </div>
+        ))}
+      </div>
+      <div className="admin-toolbar">
+        <label className="admin-search">
+          <Search size={19} />
+          <input
+            aria-label="Tìm đơn hàng"
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+            placeholder="Tên, số điện thoại hoặc mã đơn…"
+          />
+        </label>
+        <label className="admin-status-filter">
+          Trạng thái
+          <select
+            aria-label="Trạng thái"
+            value={status}
+            onChange={(event) => setStatus(event.target.value)}
+          >
+            {statuses.map((s) => (
+              <option value={s.value} key={s.value}>
+                {s.label}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      {error && (
+        <p role="alert" className="form-error">
+          {error}
+        </p>
+      )}
+      <p className="admin-result-count" role="status">
+        {filtered.length} đơn hàng
+      </p>
+      <div className="admin-order-list">
+        {!filtered.length ? (
+          <div className="admin-empty">
+            <Package size={42} strokeWidth={1} />
+            <h2>
+              {search || status !== "all"
+                ? "Chưa tìm thấy đơn phù hợp."
+                : "Chưa có đơn hàng nào."}
+            </h2>
+            <p>
+              {search || status !== "all"
+                ? "Thử đổi từ khóa hoặc trạng thái đơn hàng."
+                : "Những đơn hoa mới sẽ xuất hiện tại đây."}
+            </p>
+          </div>
+        ) : (
+          filtered.map((order) => (
+            <article className="admin-order" key={order.id}>
+              <div className="admin-order-heading">
+                <div>
+                  <span className="eyebrow">ĐƠN HÀNG</span>
+                  <h2>#{order.id}</h2>
+                  <p>
+                    {new Date(order.createdAt).toLocaleString("vi-VN", {
+                      timeZone: "Asia/Ho_Chi_Minh",
+                    })}
+                  </p>
                 </div>
-
-                <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <h4 className="font-semibold text-gray-700 mb-2">Thông tin khách hàng</h4>
-                    <p className="text-gray-600">👤 {order.name}</p>
-                    <p className="text-gray-600">📞 {order.phone}</p>
-                    <p className="text-gray-600">📍 {order.address}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-gray-700 mb-2">Sản phẩm</h4>
-                    {order.items?.map((item, index) => (
-                      <p key={index} className="text-gray-600">
-                        • {item.product?.name || 'Sản phẩm'} x {item.quantity}
-                      </p>
-                    ))}
-                  </div>
+                <div>
+                  {badge(order.status)}
+                  <strong>{order.total.toLocaleString("vi-VN")}₫</strong>
+                  <small>
+                    {order.paymentMethod === "cod"
+                      ? "Thanh toán khi nhận"
+                      : order.paymentMethod === "momo"
+                        ? "Ví MoMo"
+                        : "Chuyển khoản"}
+                  </small>
                 </div>
-
-                {order.note && (
-                  <div className="bg-gray-50 rounded-lg p-3">
-                    <p className="text-sm text-gray-600">
-                      <span className="font-semibold">Ghi chú:</span> {order.note}
-                    </p>
-                  </div>
-                )}
               </div>
-            ))
-          )}
-        </div>
+              <div className="admin-order-body">
+                <div>
+                  <h3>Người đặt hoa</h3>
+                  <p>{order.name}</p>
+                  <a href={`tel:${order.phone}`}>{order.phone}</a>
+                  <p>{order.address}</p>
+                </div>
+                <div>
+                  <h3>Hoa được chọn</h3>
+                  {order.items?.map((item, index) => (
+                    <p key={index}>
+                      {item.product?.name || "Sản phẩm"}{" "}
+                      <span>× {item.quantity}</span>
+                    </p>
+                  ))}
+                </div>
+              </div>
+              {order.note && (
+                <div className="admin-order-note">
+                  <strong>Lời nhắn</strong>
+                  <p>{order.note}</p>
+                </div>
+              )}
+            </article>
+          ))
+        )}
       </div>
     </div>
   );

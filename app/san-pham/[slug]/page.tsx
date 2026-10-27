@@ -1,227 +1,232 @@
-'use client';
+"use client";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import { useState, use } from "react";
+import {
+  ArrowRight,
+  ShoppingBag,
+  Heart,
+  Minus,
+  Plus,
+  Check,
+  Truck,
+  Flower2,
+  Gift,
+} from "lucide-react";
+import { getProductBySlug, products, getCategoryBySlug } from "@/lib/data";
+import { useCartFeedback } from "@/components/CartFeedback";
+import { useWishlist } from "@/lib/wishlist-context";
+import ProductCard from "@/components/ProductCard";
 
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import { useState, use } from 'react';
-import { ShoppingCart, Heart, Minus, Plus, Check } from 'lucide-react';
-import { getProductBySlug, products } from '@/lib/data';
-import { useCart } from '@/lib/cart-context';
-import ProductCard from '@/components/ProductCard';
-
-export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+export default function ProductPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = use(params);
   const product = getProductBySlug(slug);
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
-  const [addedToCart, setAddedToCart] = useState(false);
-  const { addToCart } = useCart();
-
-  if (!product) {
-    notFound();
-  }
-
-  const relatedProducts = products
-    .filter(p => p.category === product.category && p.id !== product.id)
+  const { addition, addWithFeedback } = useCartFeedback();
+  const added = addition?.product.id === product?.id;
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  if (!product) notFound();
+  const saved = isInWishlist(product.id);
+  const categoryName = getCategoryBySlug(product.category)?.name || "Hoa bó";
+  const related = products
+    .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
-
-  const handleAddToCart = () => {
-    addToCart(product, quantity);
-    setAddedToCart(true);
-    setTimeout(() => setAddedToCart(false), 2000);
-  };
-
   return (
-    <div className="bg-gray-50">
-      {/* Breadcrumb */}
-      <div className="bg-white border-b">
-        <div className="container mx-auto px-4 py-3">
-          <nav className="flex text-sm text-gray-600">
-            <a href="/" className="hover:text-pink-600">Trang chủ</a>
-            <span className="mx-2">/</span>
-            <a href={`/danh-muc/${product.category}`} className="hover:text-pink-600">
-              Danh mục
-            </a>
-            <span className="mx-2">/</span>
-            <span className="text-gray-800">{product.name}</span>
-          </nav>
-        </div>
-      </div>
-
-      {/* Product Detail */}
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="grid md:grid-cols-2 gap-8 p-6">
-              {/* Images */}
-              <div>
-                <div className="aspect-square relative rounded-lg overflow-hidden mb-4">
-                  <Image
-                    src={product.images[selectedImage]}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                  {product.discount && (
-                    <span className="absolute top-4 left-4 bg-red-500 text-white text-sm font-bold px-3 py-1 rounded">
-                      -{product.discount}%
-                    </span>
-                  )}
-                </div>
-
-                {product.images.length > 1 && (
-                  <div className="grid grid-cols-4 gap-2">
-                    {product.images.map((image, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setSelectedImage(index)}
-                        className={`aspect-square relative rounded-lg overflow-hidden border-2 ${
-                          selectedImage === index ? 'border-pink-600' : 'border-gray-200'
-                        }`}
-                      >
-                        <Image
-                          src={image}
-                          alt={`${product.name} ${index + 1}`}
-                          fill
-                          className="object-cover"
-                        />
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Info */}
-              <div>
-                <h1 className="text-3xl font-bold text-gray-800 mb-4">
-                  {product.name}
-                </h1>
-
-                {product.size && (
-                  <p className="text-gray-600 mb-4">Kích thước: {product.size}</p>
-                )}
-
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="text-3xl font-bold text-pink-600">
-                    {product.price.toLocaleString('vi-VN')}₫
-                  </span>
-                  {product.originalPrice && (
-                    <span className="text-xl text-gray-400 line-through">
-                      {product.originalPrice.toLocaleString('vi-VN')}₫
-                    </span>
-                  )}
-                </div>
-
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    {product.inStock ? (
-                      <>
-                        <Check className="text-green-600" size={20} />
-                        <span className="text-green-600 font-medium">Còn hàng</span>
-                      </>
-                    ) : (
-                      <span className="text-red-600 font-medium">Hết hàng</span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="border-t pt-6 mb-6">
-                  <h3 className="font-semibold mb-3">Mô tả sản phẩm:</h3>
-                  <p className="text-gray-600 leading-relaxed">{product.description}</p>
-                </div>
-
-                {/* Quantity */}
-                <div className="mb-6">
-                  <label className="block font-semibold mb-2">Số lượng:</label>
-                  <div className="flex items-center gap-3">
-                    <button
-                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-100"
-                      disabled={!product.inStock}
-                    >
-                      <Minus size={18} />
-                    </button>
-                    <span className="text-xl font-semibold w-12 text-center">
-                      {quantity}
-                    </span>
-                    <button
-                      onClick={() => setQuantity(quantity + 1)}
-                      className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-100"
-                      disabled={!product.inStock}
-                    >
-                      <Plus size={18} />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Actions */}
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button
-                    onClick={handleAddToCart}
-                    disabled={!product.inStock}
-                    className={`flex-1 py-3 px-6 rounded-lg font-semibold flex items-center justify-center gap-2 transition ${
-                      product.inStock
-                        ? addedToCart
-                          ? 'bg-green-600 text-white'
-                          : 'bg-pink-600 text-white hover:bg-pink-700'
-                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                    }`}
-                  >
-                    {addedToCart ? (
-                      <>
-                        <Check size={20} />
-                        Đã thêm vào giỏ
-                      </>
-                    ) : (
-                      <>
-                        <ShoppingCart size={20} />
-                        Thêm vào giỏ hàng
-                      </>
-                    )}
-                  </button>
-                  <button className="py-3 px-6 rounded-lg border-2 border-pink-600 text-pink-600 font-semibold hover:bg-pink-50 transition flex items-center justify-center gap-2">
-                    <Heart size={20} />
-                    Yêu thích
-                  </button>
-                </div>
-
-                {/* Additional Info */}
-                <div className="mt-8 border-t pt-6">
-                  <div className="space-y-3 text-sm">
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-600">✓</span>
-                      <span>Miễn phí giao hàng bán kính 5km</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-600">✓</span>
-                      <span>Hoa tươi mới 100%, nhập trong ngày</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-600">✓</span>
-                      <span>Gửi hình trước khi giao (theo yêu cầu)</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-pink-600">✓</span>
-                      <span>Tặng kèm thiệp chúc mừng miễn phí</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div className="product-detail-page" key={slug}>
+      <nav className="page-breadcrumb" aria-label="Đường dẫn">
+        <Link href="/">Trang chủ</Link>
+        <span>/</span>
+        <Link href={`/danh-muc/${product.category}`}>{categoryName}</Link>
+        <span>/</span>
+        <span>{product.name}</span>
+      </nav>
+      <section className="product-detail-layout">
+        <div className="detail-gallery">
+          <div className="detail-main-photo">
+            <Image
+              src={product.images[selectedImage] || product.images[0]}
+              alt={product.name}
+              fill
+              priority
+              sizes="(max-width: 760px) 90vw, 48vw"
+              className="object-cover"
+            />
+            {product.discount && (
+              <span className="detail-discount">
+                Ưu ái −{product.discount}%
+              </span>
+            )}
           </div>
-        </div>
-      </section>
-
-      {/* Related Products */}
-      {relatedProducts.length > 0 && (
-        <section className="py-12">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-gray-800 mb-8">Sản Phẩm Liên Quan</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {relatedProducts.map(p => (
-                <ProductCard key={p.id} product={p} />
+          {product.images.length > 1 && (
+            <div className="detail-thumbnails">
+              {product.images.map((image, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedImage(index)}
+                  aria-label={`Xem ảnh ${index + 1} của ${product.name}`}
+                  aria-pressed={selectedImage === index}
+                >
+                  <Image
+                    src={image}
+                    alt={`${product.name} — góc nhìn ${index + 1}`}
+                    fill
+                    sizes="90px"
+                    className="object-cover"
+                  />
+                </button>
               ))}
             </div>
+          )}
+          <p className="gallery-caption">
+            Mỗi bó hoa là một thiết kế thủ công, được chăm chút dành riêng cho
+            bạn.
+          </p>
+        </div>
+        <div className="detail-copy">
+          <span className="eyebrow">
+            AMOR FLORIST · {categoryName.toLocaleUpperCase("vi")}
+          </span>
+          <h1>{product.name}</h1>
+          <div className="detail-prices">
+            <span>{product.price.toLocaleString("vi-VN")}₫</span>
+            {product.originalPrice && (
+              <del>{product.originalPrice.toLocaleString("vi-VN")}₫</del>
+            )}
+          </div>
+          <span className="detail-stock">
+            {product.inStock ? (
+              <>
+                <Check size={14} /> Sẵn sàng gửi trao
+              </>
+            ) : (
+              "Tạm hết hàng"
+            )}
+          </span>
+          <p className="detail-description">{product.description}</p>
+          {product.size && (
+            <div className="detail-size">
+              <span>Kích thước</span>
+              <strong>{product.size}</strong>
+            </div>
+          )}
+          <div className="detail-purchase">
+            <div className="quantity-row">
+              <span>Số lượng</span>
+              <div className="quantity-control">
+                <button
+                  onClick={() => {
+                    setQuantity(Math.max(1, quantity - 1));
+                  }}
+                  disabled={quantity <= 1 || !product.inStock}
+                  aria-label="Giảm số lượng"
+                >
+                  <Minus size={15} />
+                </button>
+                <output aria-live="polite">{quantity}</output>
+                <button
+                  onClick={() => {
+                    setQuantity(quantity + 1);
+                  }}
+                  disabled={!product.inStock}
+                  aria-label="Tăng số lượng"
+                >
+                  <Plus size={15} />
+                </button>
+              </div>
+            </div>
+            <div className="detail-action-row">
+              <button
+                key={added ? addition?.id : "idle"}
+                className={`botanical-button detail-add ${added ? "is-added" : ""}`}
+                disabled={!product.inStock}
+                onClick={() => {
+                  addWithFeedback(product, quantity);
+                }}
+              >
+                {added ? <Check size={18} /> : <ShoppingBag size={18} />}
+                {added ? "Đã thêm vào giỏ hàng" : "Thêm vào giỏ hàng"}
+              </button>
+              <button
+                className="detail-save"
+                aria-label={saved ? "Bỏ yêu thích" : "Thêm vào yêu thích"}
+                aria-pressed={saved}
+                onClick={() =>
+                  saved
+                    ? removeFromWishlist(product.id)
+                    : addToWishlist(product)
+                }
+              >
+                <Heart
+                  size={20}
+                  strokeWidth={1.4}
+                  fill={saved ? "currentColor" : "none"}
+                />
+              </button>
+            </div>
+            <span className="sr-only" role="status">
+              {added ? `Đã thêm ${quantity} ${product.name} vào giỏ hàng` : ""}
+            </span>
+          </div>
+          <div className="detail-services">
+            {[
+              {
+                icon: Truck,
+                text: "Giao nhanh 90 phút · Miễn phí trong bán kính 5km",
+              },
+              {
+                icon: Flower2,
+                text: "Hoa tươi mỗi ngày · Gửi hình trước khi giao theo yêu cầu",
+              },
+              {
+                icon: Gift,
+                text: "Tặng thiệp viết tay · Thay bạn gửi lời thương",
+              },
+            ].map(({ icon: Icon, text }) => (
+              <div key={text}>
+                <Icon size={19} strokeWidth={1.2} />
+                <span>{text}</span>
+              </div>
+            ))}
+          </div>
+          <a href="tel:0869867694" className="detail-advice">
+            Cần thêm một chút tư vấn? Gọi Amor <ArrowRight size={15} />
+          </a>
+        </div>
+      </section>
+      <section className="detail-care">
+        <Flower2 size={32} strokeWidth={1} />
+        <div>
+          <h2>Một chút chăm sóc, hoa xinh lâu hơn.</h2>
+          <p>
+            Đặt hoa ở nơi thoáng mát, tránh ánh nắng trực tiếp. Thay nước sạch
+            và cắt chéo gốc mỗi ngày để giữ hoa tươi lâu.
+          </p>
+        </div>
+        <Link href="/huong-dan" className="text-link">
+          Cách chăm hoa <ArrowRight size={16} />
+        </Link>
+      </section>
+      {related.length > 0 && (
+        <section className="boutique-section">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">THÊM MỘT CHÚT CẢM HỨNG</span>
+              <h2>Có thể bạn cũng thương</h2>
+            </div>
+            <Link href={`/danh-muc/${product.category}`} className="text-link">
+              Xem bộ sưu tập <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="product-grid">
+            {related.map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
           </div>
         </section>
       )}
