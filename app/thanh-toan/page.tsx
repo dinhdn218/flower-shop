@@ -28,7 +28,7 @@ export default function CheckoutPage() {
     phone: "",
     email: "",
     address: "",
-    city: "TP. Hồ Chí Minh",
+    city: "Hà Nội",
     district: "",
     deliveryDate: "",
     deliveryTime: "09:00 - 12:00",
@@ -123,6 +123,8 @@ export default function CheckoutPage() {
         title="Gửi hoa, gửi cả tấm lòng."
         description="Thêm một vài thông tin để Amor mang món quà của bạn đến đúng người, đúng dịp."
         eyebrow="HOÀN TẤT ĐƠN HOA"
+        crumb="Thanh toán"
+        compact
       />
       <PurchaseSteps step={2} />
       <form className="purchase-layout checkout-layout" onSubmit={sendOrder}>
@@ -194,7 +196,7 @@ export default function CheckoutPage() {
                   onChange={change}
                   required
                 >
-                  {["TP. Hồ Chí Minh", "Hà Nội", "Đà Nẵng", "Cần Thơ"].map(
+                  {["Hà Nội", "TP. Hồ Chí Minh", "Đà Nẵng", "Cần Thơ"].map(
                     (city) => (
                       <option key={city}>{city}</option>
                     ),

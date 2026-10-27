@@ -24,6 +24,8 @@ export default function CartPage() {
         title="Một giỏ hoa, thật nhiều thương."
         description="Những thiết kế bạn chọn đang đợi được gói ghém. Cùng Amor xem lại món quà dành cho người đặc biệt nhé."
         eyebrow="GIỎ HOA CỦA BẠN"
+        crumb="Giỏ hàng"
+        compact
       />
       <PurchaseSteps step={1} />
       {!isHydrated ? (

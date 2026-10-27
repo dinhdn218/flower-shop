@@ -98,7 +98,7 @@ export default function Home() {
             className="hero-image"
           />
           <div className="hero-photo-caption">
-            <span>THE ART OF GIVING</span>
+            <span>NGHỆ THUẬT TRAO TẶNG</span>
             <span>Hoa đẹp. Tình yêu đẹp.</span>
           </div>
           <div className="flower-seal">

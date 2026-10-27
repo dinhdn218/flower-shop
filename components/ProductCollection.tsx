@@ -38,11 +38,11 @@ export default function ProductCollection({
   }, [products, sort]);
   return (
     <div className="collection-page">
-      <div className="page-breadcrumb">
+      <nav className="page-breadcrumb" aria-label="Đường dẫn">
         <Link href="/">Trang chủ</Link>
         <span>/</span>
         <span>{title}</span>
-      </div>
+      </nav>
       <section className="collection-intro">
         <span className="eyebrow">TỪ VƯỜN HOA AMOR, GỬI ĐẾN BẠN</span>
         <h1>{title}</h1>
@@ -67,6 +67,7 @@ export default function ProductCollection({
         ))}
       </nav>
       <section className="collection-content">
+        <h2 className="sr-only">Danh sách thiết kế hoa</h2>
         <div className="collection-toolbar">
           <p>
             <strong>{products.length}</strong> thiết kế hoa{" "}

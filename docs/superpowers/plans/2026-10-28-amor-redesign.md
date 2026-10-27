@@ -41,3 +41,15 @@ Approaches: selected elegant botanical boutique; alternative youthful peach dire
 ## Information page content correction
 - Audit found the ordering guide and policies still rendered their original utility-class content (bold sans headings, emoji labels, white CTA buttons) inside the new shell. Rebuilt both with shared markers, eyebrows, serif headings, notes, outline buttons and the site-wide consultation CTA; removed CSS overrides that targeted Tailwind utility classes.
 - Verification: production build/TypeScript passed; changed-file lint and diff checks passed. Browser audit of 22 routes at 1353px and 390px found one heading font, one body font, one background, no horizontal overflow and no page errors.
+
+## Accessibility, layout frame and favicon follow-up
+- Audit found ~50 text/background pairs below 4.5:1, text down to 9px, touch targets down to 20px, a default `▶` marker on the occasion menu, a permanent "0" cart badge and no skip link. Added `--text-muted`/`--text-accent` tokens (≥4.66:1 on every light surface), raised all non-logo text to 12px, extended links and controls to 44px, rebuilt the occasion menu (chevron, outside click, Escape, closes on navigation), grouped the mobile menu and added a skip link.
+- Mobile hero now shows the flowers first; cart and checkout use a compact intro with short breadcrumbs; checkout defaults to Hà Nội.
+- Product data: removed duplicated gallery entries and non-flower placeholder photos. Names and descriptions still do not match many photos; needs the shop's real product photography.
+- Layout: added `--page-max`, `--page-narrow`, `--page-gutter` and `--page-inline`; every band now shares one content edge (86–1354 at 1440px, 600–1960 at 2560px) instead of four different widths.
+- Favicon: replaced a 16-colour 64px ICO (rendered grey) and a 64px touch icon with the Flower2 mark on olive: ICO 16/32/48, SVG, 180px apple icon and a manifest with 192/512/maskable icons; removed duplicate icon tags.
+- Verification: build, TypeScript, changed-file lint and diff check passed. Browser audit: 0 contrast failures outside photo overlays, 0 sub-24px targets on mobile except inline/radio exemptions, no overflow or page errors on 22 routes × 2 viewports; dropdown, favicon and manifest behaviour checked.
+
+## Form fields and product zoom
+- Selects use a custom chevron with 44px right padding instead of the native arrow. Field focus is one shared rule: a 2px olive ring on the field border (offset −2px) instead of three rules with 2px gaps and mixed colours.
+- Product detail main photo zooms 1.6× toward the pointer on hover (mouse only); resets on leave. Sharpness is limited by the 736–800px source photos.

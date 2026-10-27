@@ -82,9 +82,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </>
           ) : !product.inStock ? (
             "Tạm hết hàng"
-          ) : (
-            "Hoa tươi · Chăm chút từng cánh"
-          )}
+          ) : null}
         </span>
       </div>
     </article>

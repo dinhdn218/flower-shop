@@ -77,7 +77,6 @@ export const products: Product[] = [
     category: "hoa-sinh-nhat",
     images: [
       "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=800&q=80",
-      "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=800&q=80",
     ],
     size: "Cao 40cm",
     inStock: true,
@@ -95,7 +94,6 @@ export const products: Product[] = [
     discount: 8,
     category: "hoa-tinh-yeu",
     images: [
-      "https://i.pinimg.com/1200x/d7/3d/a3/d73da3631c8e86c9f024f74a1d8f12d1.jpg",
       "https://i.pinimg.com/1200x/d7/3d/a3/d73da3631c8e86c9f024f74a1d8f12d1.jpg",
     ],
     size: "Cao 45cm",
@@ -129,7 +127,6 @@ export const products: Product[] = [
     category: "hoa-tinh-yeu",
     images: [
       "https://i.pinimg.com/736x/eb/d1/6c/ebd16c53ac342d3fce0fe3dbcb623c00.jpg",
-      "https://i.pinimg.com/736x/eb/d1/6c/ebd16c53ac342d3fce0fe3dbcb623c00.jpg",
     ],
     size: "Cao 40cm",
     inStock: true,
@@ -144,8 +141,7 @@ export const products: Product[] = [
     price: 650000,
     category: "hoa-khai-truong",
     images: [
-      "https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      "https://i.pinimg.com/736x/50/dc/23/50dc2391a498ab211237eb8e59ad1679.jpg",
     ],
     size: "Cao 180cm",
     inStock: true,
@@ -179,7 +175,6 @@ export const products: Product[] = [
     discount: 6,
     category: "hoa-sinh-nhat",
     images: [
-      "https://i.pinimg.com/736x/1b/5f/dd/1b5fddc1e419f75e324eee23dd72ce63.jpg",
       "https://i.pinimg.com/736x/1b/5f/dd/1b5fddc1e419f75e324eee23dd72ce63.jpg",
     ],
     size: "Cao 40cm",
@@ -230,7 +225,6 @@ export const products: Product[] = [
     category: "hoa-cuoi",
     images: [
       "https://i.pinimg.com/736x/b1/51/46/b15146346d850da5cb21594be8b4bc20.jpg",
-      "https://i.pinimg.com/736x/b1/51/46/b15146346d850da5cb21594be8b4bc20.jpg",
     ],
     size: "Đường kính 25cm",
     inStock: true,
@@ -244,7 +238,6 @@ export const products: Product[] = [
     price: 320000,
     category: "hoa-tot-nghiep",
     images: [
-      "https://i.pinimg.com/736x/ce/95/36/ce95361c779054d597c0982b38b36186.jpg",
       "https://i.pinimg.com/736x/ce/95/36/ce95361c779054d597c0982b38b36186.jpg",
     ],
     size: "Cao 40cm",
@@ -260,7 +253,6 @@ export const products: Product[] = [
     category: "hoa-giang-sinh",
     images: [
       "https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=800&q=80",
-      "https://images.unsplash.com/photo-1482517967863-00e15c9b44be?w=800&q=80",
     ],
     size: "Cao 45cm",
     inStock: true,
@@ -275,7 +267,6 @@ export const products: Product[] = [
     category: "hoa-tinh-yeu",
     images: [
       "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=800&q=80",
-      "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=800&q=80",
     ],
     size: "Cao 60cm",
     inStock: true,
@@ -290,8 +281,7 @@ export const products: Product[] = [
     price: 850000,
     category: "hoa-khai-truong",
     images: [
-      "https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      "https://i.pinimg.com/736x/50/dc/23/50dc2391a498ab211237eb8e59ad1679.jpg",
     ],
     size: "Cao 200cm",
     inStock: true,
@@ -308,7 +298,6 @@ export const products: Product[] = [
     category: "hoa-tinh-yeu",
     images: [
       "https://i.pinimg.com/736x/a1/a8/68/a1a8680cef7862ccd7f1935aec5de89a.jpg",
-      "https://i.pinimg.com/736x/a1/a8/68/a1a8680cef7862ccd7f1935aec5de89a.jpg",
     ],
     size: "Cao 40cm",
     inStock: true,
@@ -322,7 +311,6 @@ export const products: Product[] = [
     price: 360000,
     category: "hoa-sinh-nhat",
     images: [
-      "https://i.pinimg.com/736x/29/80/3c/29803ccbbc52584cef28600199d0ed8a.jpg",
       "https://i.pinimg.com/736x/29/80/3c/29803ccbbc52584cef28600199d0ed8a.jpg",
     ],
     size: "Cao 45cm",
@@ -340,7 +328,6 @@ export const products: Product[] = [
     category: "hoa-tinh-yeu",
     images: [
       "https://i.pinimg.com/736x/d1/65/fc/d165fc41daefae7798035f1484cb7a00.jpg",
-      "https://i.pinimg.com/736x/d1/65/fc/d165fc41daefae7798035f1484cb7a00.jpg",
     ],
     size: "Cao 40cm",
     inStock: true,
@@ -357,7 +344,6 @@ export const products: Product[] = [
     category: "hoa-bo",
     images: [
       "https://i.pinimg.com/736x/b6/66/fd/b666fd07c17471d2f18ee52684791701.jpg",
-      "https://i.pinimg.com/736x/b6/66/fd/b666fd07c17471d2f18ee52684791701.jpg",
     ],
     size: "Cao 35cm",
     inStock: true,
@@ -373,7 +359,6 @@ export const products: Product[] = [
     category: "hoa-sinh-nhat",
     images: [
       "https://i.pinimg.com/1200x/4e/ae/c4/4eaec4d94fda048f2a4a8c03cd713ef8.jpg",
-      "https://i.pinimg.com/1200x/4e/ae/c4/4eaec4d94fda048f2a4a8c03cd713ef8.jpg",
     ],
     size: "Cao 50cm",
     inStock: true,
@@ -388,7 +373,6 @@ export const products: Product[] = [
     price: 250000,
     category: "hoa-chuc-mung",
     images: [
-      "https://i.pinimg.com/1200x/a6/c8/e6/a6c8e6b0a102f2983c9bdc7d94e287bc.jpg",
       "https://i.pinimg.com/1200x/a6/c8/e6/a6c8e6b0a102f2983c9bdc7d94e287bc.jpg",
     ],
     size: "Cao 40cm",
@@ -407,7 +391,6 @@ export const products: Product[] = [
     category: "hoa-tinh-yeu",
     images: [
       "https://i.pinimg.com/736x/40/23/b8/4023b840a3c4b3eac3944ddea210daf3.jpg",
-      "https://i.pinimg.com/736x/40/23/b8/4023b840a3c4b3eac3944ddea210daf3.jpg",
     ],
     size: "Cao 50cm",
     inStock: true,
@@ -424,7 +407,6 @@ export const products: Product[] = [
     category: "hoa-cuoi",
     images: [
       "https://i.pinimg.com/736x/be/ea/f8/beeaf82c4b3a16a18059d92dd04459f7.jpg",
-      "https://i.pinimg.com/736x/be/ea/f8/beeaf82c4b3a16a18059d92dd04459f7.jpg",
     ],
     size: "Cao 55cm",
     inStock: true,
@@ -439,7 +421,6 @@ export const products: Product[] = [
     price: 550000,
     category: "hoa-chuc-mung",
     images: [
-      "https://i.pinimg.com/736x/e3/e3/3b/e3e33bbf390292b154fcf3259ddd5ddc.jpg",
       "https://i.pinimg.com/736x/e3/e3/3b/e3e33bbf390292b154fcf3259ddd5ddc.jpg",
     ],
     size: "Cao 45cm",
@@ -456,7 +437,6 @@ export const products: Product[] = [
     category: "hoa-sinh-nhat",
     images: [
       "https://i.pinimg.com/736x/f8/a3/26/f8a326cdb26b1ae57a822a1701731626.jpg",
-      "https://i.pinimg.com/736x/f8/a3/26/f8a326cdb26b1ae57a822a1701731626.jpg",
     ],
     size: "Cao 42cm",
     inStock: true,
@@ -471,7 +451,6 @@ export const products: Product[] = [
     price: 720000,
     category: "hoa-tinh-yeu",
     images: [
-      "https://i.pinimg.com/736x/65/94/33/659433baa434e5360ec3728f39333204.jpg",
       "https://i.pinimg.com/736x/65/94/33/659433baa434e5360ec3728f39333204.jpg",
     ],
     size: "Hộp 20x20cm",
@@ -488,7 +467,6 @@ export const products: Product[] = [
     category: "hoa-tot-nghiep",
     images: [
       "https://i.pinimg.com/736x/d2/58/33/d25833bcafe44359a726151d6322f578.jpg",
-      "https://i.pinimg.com/736x/d2/58/33/d25833bcafe44359a726151d6322f578.jpg",
     ],
     size: "Cao 48cm",
     inStock: true,
@@ -503,7 +481,6 @@ export const products: Product[] = [
     price: 650000,
     category: "hoa-cuoi",
     images: [
-      "https://i.pinimg.com/1200x/3a/18/88/3a18884f0d3973d6b207369c7b66b15a.jpg",
       "https://i.pinimg.com/1200x/3a/18/88/3a18884f0d3973d6b207369c7b66b15a.jpg",
     ],
     size: "Cao 35cm",

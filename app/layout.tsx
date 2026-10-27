@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Be_Vietnam_Pro, Noto_Serif } from "next/font/google";
 import "./globals.css";
 import { CartFeedbackProvider } from "@/components/CartFeedback";
@@ -27,13 +27,10 @@ export const metadata: Metadata = {
   title: "Amor Florist - Tiệm hoa của tình yêu",
   description:
     "Amor Florist - Tiệm hoa tươi của tình yêu. Đặt hoa online giao tận nơi, miễn phí ship nội thành. Hoa sinh nhật, hoa khai trương, hoa tình yêu.",
-  icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "64x64" },
-    ],
-    apple: "/amor-icon.png",
-  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#545e42",
 };
 
 export default function RootLayout({
@@ -49,8 +46,13 @@ export default function RootLayout({
         <CartProvider>
           <WishlistProvider>
             <CartFeedbackProvider>
+              <a href="#main-content" className="skip-link">
+                Bỏ qua đến nội dung chính
+              </a>
               <Header />
-              <main className="min-h-screen">{children}</main>
+              <main id="main-content" tabIndex={-1} className="min-h-screen">
+                {children}
+              </main>
               <Footer />
               <ChatWidgets />
               <ScrollToTop />

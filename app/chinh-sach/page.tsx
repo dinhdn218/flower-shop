@@ -23,6 +23,7 @@ export default function ChinhSachPage() {
         title="An tâm gửi trao cùng Amor."
         description="Những thông tin về đặt hoa, giao hàng, đổi trả và bảo mật để bạn yên tâm chọn quà."
         eyebrow="CHÍNH SÁCH AMOR"
+        crumb="Chính sách"
       />
       <div className="information-content">
         <div className="information-articles">

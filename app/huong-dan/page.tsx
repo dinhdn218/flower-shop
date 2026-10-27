@@ -52,6 +52,7 @@ export default function HuongDanPage() {
         title="Đặt hoa, thật nhẹ nhàng."
         description="Từ chọn một bó hoa đến gửi một lời thương. Amor đồng hành cùng bạn qua từng bước."
         eyebrow="HƯỚNG DẪN ĐẶT HOA"
+        crumb="Hướng dẫn đặt hoa"
       />
       <div className="information-content">
         <div className="information-articles">

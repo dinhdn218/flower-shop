@@ -9,6 +9,7 @@ export default function ContactPage() {
         title="Amor luôn sẵn lòng lắng nghe."
         description="Một câu hỏi, một ý tưởng hay một lời thương muốn gửi. Chúng mình ở đây để cùng bạn chọn hoa."
         eyebrow="KẾT NỐI VỚI AMOR"
+        crumb="Liên hệ"
       />
       <section className="contact-layout">
         <div className="contact-copy">

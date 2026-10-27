@@ -37,6 +37,15 @@ export default function ProductPage({
   const related = products
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
+  // Zoom toward the pointer so the hovered part of the bouquet stays in view.
+  const followPointer = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== "mouse") return;
+    const box = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - box.left) / box.width) * 100;
+    const y = ((event.clientY - box.top) / box.height) * 100;
+    event.currentTarget.style.setProperty("--zoom-x", `${x}%`);
+    event.currentTarget.style.setProperty("--zoom-y", `${y}%`);
+  };
   return (
     <div className="product-detail-page" key={slug}>
       <nav className="page-breadcrumb" aria-label="Đường dẫn">
@@ -48,7 +57,11 @@ export default function ProductPage({
       </nav>
       <section className="product-detail-layout">
         <div className="detail-gallery">
-          <div className="detail-main-photo">
+          <div
+            className="detail-main-photo"
+            onPointerEnter={followPointer}
+            onPointerMove={followPointer}
+          >
             <Image
               src={product.images[selectedImage] || product.images[0]}
               alt={product.name}

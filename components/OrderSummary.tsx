@@ -65,7 +65,7 @@ export default function OrderSummary({
             className="botanical-button summary-primary"
             disabled={isProcessing}
           >
-            {isProcessing ? "Đang gửi đơn hoa…" : "Đặt Hàng"}
+            {isProcessing ? "Đang gửi đơn hoa…" : "Đặt hàng"}
             <ArrowRight size={17} />
           </button>
           <p className="summary-terms">

@@ -7,8 +7,10 @@ import {
   X,
   Heart,
   ArrowUpRight,
+  ArrowRight,
+  ChevronDown,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useCartFeedback } from "@/components/CartFeedback";
 import { useCart } from "@/lib/cart-context";
@@ -29,10 +31,32 @@ const occasions = [
 ];
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [occasionOpen, setOccasionOpen] = useState(false);
+  const occasionMenu = useRef<HTMLDetailsElement>(null);
   const pathname = usePathname();
   const { addition } = useCartFeedback();
   const { getTotalItems } = useCart();
   const { getTotalItems: getWishlistTotal } = useWishlist();
+  const onOccasionPage = occasions.some((link) => link.href === pathname);
+
+  useEffect(() => {
+    if (!occasionOpen) return;
+    const closeOutside = (event: PointerEvent) => {
+      if (!occasionMenu.current?.contains(event.target as Node)) {
+        setOccasionOpen(false);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOccasionOpen(false);
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [occasionOpen]);
+
   return (
     <header className="shop-header">
       <div className="announcement">
@@ -62,11 +86,24 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <details className="occasion-menu">
-            <summary>Theo dịp</summary>
+          <details
+            className="occasion-menu"
+            ref={occasionMenu}
+            open={occasionOpen}
+            onToggle={(event) => setOccasionOpen(event.currentTarget.open)}
+          >
+            <summary className={onOccasionPage ? "is-current" : undefined}>
+              Theo dịp
+              <ChevronDown size={15} strokeWidth={1.6} />
+            </summary>
             <div>
               {occasions.map((link) => (
-                <Link href={link.href} key={link.href}>
+                <Link
+                  href={link.href}
+                  key={link.href}
+                  aria-current={pathname === link.href ? "page" : undefined}
+                  onClick={() => setOccasionOpen(false)}
+                >
                   {link.label}
                 </Link>
               ))}
@@ -91,7 +128,9 @@ export default function Header() {
             aria-label={`Giỏ hàng, ${getTotalItems()} sản phẩm`}
           >
             <ShoppingBag size={21} strokeWidth={1.4} />
-            <span className="cart-count">{getTotalItems()}</span>
+            {getTotalItems() > 0 && (
+              <span className="cart-count">{getTotalItems()}</span>
+            )}
           </Link>
           <button
             className="icon-action mobile-toggle"
@@ -110,15 +149,24 @@ export default function Header() {
           className="mobile-nav"
           aria-label="Điều hướng điện thoại"
         >
-          {[...links, ...occasions].map((link) => (
-            <Link
-              href={link.href}
-              key={link.href}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-              <ArrowUpRight size={15} />
-            </Link>
+          {[
+            { title: null, items: links },
+            { title: "Theo dịp", items: occasions },
+          ].map(({ title, items }) => (
+            <div className="mobile-nav-group" key={title ?? "main"}>
+              {title && <span className="eyebrow">{title.toUpperCase()}</span>}
+              {items.map((link) => (
+                <Link
+                  href={link.href}
+                  key={link.href}
+                  aria-current={pathname === link.href ? "page" : undefined}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                  <ArrowRight size={15} strokeWidth={1.4} />
+                </Link>
+              ))}
+            </div>
           ))}
         </nav>
       )}

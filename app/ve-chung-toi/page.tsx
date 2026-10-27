@@ -10,6 +10,7 @@ export default function AboutPage() {
         title="Một tiệm hoa, nhiều lời thương."
         description="Amor là tình yêu. Và chúng mình chọn kể câu chuyện ấy bằng những cánh hoa."
         eyebrow="CÂU CHUYỆN NHỎ CỦA AMOR"
+        crumb="Về Amor"
       />
       <section className="about-story">
         <div className="about-photo">
